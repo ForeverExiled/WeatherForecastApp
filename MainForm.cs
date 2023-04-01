@@ -12,6 +12,8 @@ namespace WeatherInfo
 {
     public partial class MainForm : Form
     {
+        public Session session;
+
         public MainForm()
         {
             InitializeComponent();
