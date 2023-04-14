@@ -1,5 +1,5 @@
 ﻿
-namespace WeatherInfo
+namespace WeatherForecastApp
 {
     partial class MainForm
     {

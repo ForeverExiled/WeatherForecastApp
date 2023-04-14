@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WeatherInfo
+namespace WeatherForecastApp.Api
 {
     public class Forecast
     {
