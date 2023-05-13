@@ -1,7 +1,7 @@
 ﻿
 namespace WeatherForecastApp
 {
-    partial class MainForm
+    partial class Window
     {
         /// <summary>
         ///  Required designer variable.

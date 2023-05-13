@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WeatherForecastApp.Api
 {
-    internal class MainInfo
+    public class MainInfo
     {
         [JsonProperty("temp")]
         public double Temperature;

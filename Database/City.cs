@@ -9,14 +9,15 @@ namespace WeatherForecastApp.Database
     {
         public City()
         {
-            Forecasts = new HashSet<Forecast>();
+            Forecasts = new List<Forecast>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
+        public int? Timezone { get; set; }
 
-        public virtual ICollection<Forecast> Forecasts { get; set; }
+        public List<Forecast> Forecasts { get; set; }
     }
 }
