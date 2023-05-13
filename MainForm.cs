@@ -10,12 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WeatherForecastApp.Api;
+using WeatherForecastApp.Database;
 
 namespace WeatherForecastApp
 {
     public partial class MainForm : Form
     {
-        public Session session;
+        WeatherDBContext dbContext = new WeatherDBContext();
 
         public MainForm()
         {
