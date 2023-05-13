@@ -9,27 +9,19 @@ namespace WeatherForecastApp.Model.Api
     {
         public static WeatherResponse GetCurrentWeatherData(string cityName)
         {
-            WeatherResponse deserializedResponse = null;
-            HttpResponseMessage response = HttpData.Client.GetAsync($"/data/2.5/weather?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var responseAsString = response.Content.ReadAsStringAsync().Result;
-                deserializedResponse = JsonConvert.DeserializeObject<WeatherResponse>(responseAsString);
-            }
-            return deserializedResponse;
+            return JsonConvert.DeserializeObject<WeatherResponse>(ProcessApiGetRequest($"/data/2.5/weather?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}"));
         }
 
         public static WeatherResponseWrapper GetWeatherForecast(string cityName)
         {
-            WeatherResponseWrapper deserializedResponse = null;
-            var requestTime = DateTime.Now;
-            HttpResponseMessage response = HttpData.Client.GetAsync($"/data/2.5/forecast?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var responseAsString = response.Content.ReadAsStringAsync().Result;
-                deserializedResponse = JsonConvert.DeserializeObject<WeatherResponseWrapper>(responseAsString);
-            }
-            return deserializedResponse;
+            return JsonConvert.DeserializeObject<WeatherResponseWrapper>(ProcessApiGetRequest($"/data/2.5/forecast?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}"));
+        }
+
+        private static string ProcessApiGetRequest(string request)
+        {
+            HttpResponseMessage response = HttpData.Client.GetAsync(request).Result;
+            if (response.IsSuccessStatusCode) return response.Content.ReadAsStringAsync().Result;
+            else return null;
         }
     }
 }

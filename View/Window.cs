@@ -13,7 +13,7 @@ namespace WeatherForecastApp
 
             string cityName = "Тюмень";
             //GetCurrentWeatherData(cityName);
-            GetWeatherForecast(cityName);
+            //GetWeatherForecast(cityName);
         }
 
         void GetCurrentWeatherData(string cityName)
