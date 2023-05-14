@@ -33,8 +33,8 @@ namespace WeatherForecastApp.Model.Database
                     Humidity = forecast.Main.Humidity,
                     WindSpeed = (int)Math.Round(forecast.Wind.WindSpeed),
                     WindDegree = forecast.Wind.WindDegree,
-                    Weather = forecast.Weather[0].Main,
                     Weather_Description = forecast.Weather[0].Description,
+                    Weather_Icon = forecast.Weather[0].Icon,
                     FkCity = city.Id,
                     Timestamp = forecast.Timestamp,
                     RequestTime = requestTime

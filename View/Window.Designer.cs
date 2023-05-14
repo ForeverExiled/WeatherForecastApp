@@ -36,8 +36,10 @@ namespace WeatherForecastApp
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBoxCurrentWeather = new System.Windows.Forms.GroupBox();
             label1 = new System.Windows.Forms.Label();
+            pictureBoxWeatherConditionIcon = new System.Windows.Forms.PictureBox();
             groupBox1.SuspendLayout();
             groupBoxCurrentWeather.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWeatherConditionIcon).BeginInit();
             SuspendLayout();
             // 
             // buttonGetCurrentWeather
@@ -94,6 +96,7 @@ namespace WeatherForecastApp
             // groupBoxCurrentWeather
             // 
             groupBoxCurrentWeather.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            groupBoxCurrentWeather.Controls.Add(pictureBoxWeatherConditionIcon);
             groupBoxCurrentWeather.Controls.Add(label1);
             groupBoxCurrentWeather.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             groupBoxCurrentWeather.ForeColor = System.Drawing.Color.Black;
@@ -114,6 +117,14 @@ namespace WeatherForecastApp
             label1.TabIndex = 1;
             label1.Text = "label1";
             // 
+            // pictureBoxWeatherConditionIcon
+            // 
+            pictureBoxWeatherConditionIcon.Location = new System.Drawing.Point(126, 22);
+            pictureBoxWeatherConditionIcon.Name = "pictureBoxWeatherConditionIcon";
+            pictureBoxWeatherConditionIcon.Size = new System.Drawing.Size(100, 100);
+            pictureBoxWeatherConditionIcon.TabIndex = 2;
+            pictureBoxWeatherConditionIcon.TabStop = false;
+            // 
             // Window
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -127,6 +138,7 @@ namespace WeatherForecastApp
             groupBox1.PerformLayout();
             groupBoxCurrentWeather.ResumeLayout(false);
             groupBoxCurrentWeather.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWeatherConditionIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -140,6 +152,7 @@ namespace WeatherForecastApp
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBoxCurrentWeather;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBoxWeatherConditionIcon;
     }
 }
 

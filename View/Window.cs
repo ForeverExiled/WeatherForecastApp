@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using WeatherForecastApp.Model;
 
 namespace WeatherForecastApp
 {
@@ -15,7 +16,7 @@ namespace WeatherForecastApp
 
             comboBoxLocationList.SelectedIndex = 0;
             cityName = comboBoxLocationList.SelectedItem.ToString();
-            GetWeatherForecast(cityName);
+            //GetWeatherForecast(cityName);
         }
 
         void GetWeatherForecast(string cityName)
@@ -26,6 +27,7 @@ namespace WeatherForecastApp
         private void buttonGetCurrentWeather_Click(object sender, System.EventArgs e)
         {
             var data = Controller.RequestApiCurrentGetCall(cityName);
+            pictureBoxWeatherConditionIcon.Image = new Bitmap(WeatherConditions.GetIconPath(data.Weather[0].Icon));
         }
     }
 }

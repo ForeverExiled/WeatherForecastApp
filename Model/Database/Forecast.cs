@@ -12,8 +12,8 @@ namespace WeatherForecastApp.Database
         public int? Pressure { get; set; }
         public int? Humidity { get; set; }
         public int? WindSpeed { get; set; }
-        public string Weather { get; set; }
         public string Weather_Description { get; set; }
+        public string Weather_Icon { get; set; }
         public int? FkCity { get; set; }
         public int? WindDegree { get; set; }
         public DateTime? Timestamp { get; set; }

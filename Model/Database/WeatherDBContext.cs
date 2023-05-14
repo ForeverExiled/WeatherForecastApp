@@ -71,9 +71,9 @@ namespace WeatherForecastApp.Database
 
                 entity.Property(e => e.Timestamp).HasColumnName("timestamp");
 
-                entity.Property(e => e.Weather).HasColumnName("weather");
-
                 entity.Property(e => e.Weather_Description).HasColumnName("weather_description");
+
+                entity.Property(e => e.Weather_Icon).HasColumnName("weather_icon");
 
                 entity.Property(e => e.WindDegree).HasColumnName("wind_degree");
 
