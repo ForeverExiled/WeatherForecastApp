@@ -4,9 +4,9 @@ namespace WeatherForecastApp.Api
 {
     public class WindInfo
     {
-        [JsonProperty("Speed")]
+        [JsonProperty("speed")]
         public double WindSpeed;
-        [JsonProperty("Deg")]
+        [JsonProperty("deg")]
         public int WindDegree;
     }
 }

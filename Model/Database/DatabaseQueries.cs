@@ -8,7 +8,7 @@ namespace WeatherForecastApp.Model.Database
     {
         private static WeatherDBContext dbContext = new WeatherDBContext();
 
-        public static void InsertIntoDatabase(WeatherResponseWrapper deserializedResponse, DateTime requestTime)
+        public static void InsertIntoDatabase(WeatherForecastResponse deserializedResponse, DateTime requestTime)
         {
             var city = (City)dbContext.Find(typeof(City), deserializedResponse.City.Id);
             if (city is null)
@@ -36,7 +36,7 @@ namespace WeatherForecastApp.Model.Database
                     Weather_Description = forecast.Weather[0].Description,
                     Weather_Icon = forecast.Weather[0].Icon,
                     FkCity = city.Id,
-                    Timestamp = forecast.Timestamp,
+                    Timestamp = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(forecast.Timestamp),
                     RequestTime = requestTime
                 };
                 dbContext.Forecasts.Add(dbForecast);

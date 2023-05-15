@@ -15,19 +15,19 @@ namespace WeatherForecastApp.Controller
             View = view;
         }
 
-        public WeatherResponse RequestApiCurrentGetCall(string cityName)
+        public CurrentWeatherResponse RequestApiCurrentGetCall(string cityName)
         {
             return WeatherRequests.GetCurrentWeatherData(cityName);
         }
 
-        public WeatherResponseWrapper RequestApiForecastGetCall(string cityName)
+        public WeatherForecastResponse RequestApiForecastGetCall(string cityName)
         {
-            WeatherResponseWrapper deserializedResponse = WeatherRequests.GetWeatherForecast(cityName);
+            WeatherForecastResponse deserializedResponse = WeatherRequests.GetWeatherForecast(cityName);
             RequestDataInsertion(deserializedResponse, DateTime.Now);
             return deserializedResponse;
         }
 
-        public void RequestDataInsertion(WeatherResponseWrapper data, DateTime requestTime)
+        public void RequestDataInsertion(WeatherForecastResponse data, DateTime requestTime)
         {
             DatabaseQueries.InsertIntoDatabase(data, requestTime);
         }

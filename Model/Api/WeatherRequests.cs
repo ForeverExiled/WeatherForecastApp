@@ -6,14 +6,14 @@ namespace WeatherForecastApp.Model.Api
 {
     public static class WeatherRequests
     {
-        public static WeatherResponse GetCurrentWeatherData(string cityName)
+        public static CurrentWeatherResponse GetCurrentWeatherData(string cityName)
         {
-            return JsonConvert.DeserializeObject<WeatherResponse>(ProcessApiGetRequest($"/data/2.5/weather?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}"));
+            return JsonConvert.DeserializeObject<CurrentWeatherResponse>(ProcessApiGetRequest($"/data/2.5/weather?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}"));
         }
 
-        public static WeatherResponseWrapper GetWeatherForecast(string cityName)
+        public static WeatherForecastResponse GetWeatherForecast(string cityName)
         {
-            return JsonConvert.DeserializeObject<WeatherResponseWrapper>(ProcessApiGetRequest($"/data/2.5/forecast?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}"));
+            return JsonConvert.DeserializeObject<WeatherForecastResponse>(ProcessApiGetRequest($"/data/2.5/forecast?q={cityName}&units=metric&lang=ru&appid={HttpData.apiKey}"));
         }
 
         private static string ProcessApiGetRequest(string request)
