@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using WeatherForecastApp.Api;
 using WeatherForecastApp.Database;
+using WeatherForecastApp.Model;
 using WeatherForecastApp.Model.Api;
 using WeatherForecastApp.Model.Database;
 
@@ -32,6 +32,18 @@ namespace WeatherForecastApp.Controller
         {
             List<City> list = DatabaseQueries.GetCityList();
             return list;
+        }
+
+        public string RequestIconPath(string iconName)
+        {
+            var iconPath = WeatherConditions.GetIconPath(iconName);
+            return iconPath;
+        }
+
+        public string RequestWindDirection(int degree)
+        {
+            var direction = WindDirections.GetDirectionNameByDegree(degree);
+            return direction;
         }
     }
 }

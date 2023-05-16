@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using WeatherForecastApp.Model;
 
 namespace WeatherForecastApp
 {
@@ -32,7 +31,7 @@ namespace WeatherForecastApp
             var data = Controller.RequestApiCurrentGetCall(comboBoxLocationList.Text);
             if (data != null)
             {
-                pictureBoxWeatherConditionIcon.Image = new Bitmap(WeatherConditions.GetIconPath(data.Weather[0].Icon));
+                pictureBoxWeatherConditionIcon.Image = new Bitmap(Controller.RequestIconPath(data.Weather[0].Icon));
                 var dt = DateTime.Now;
                 labelCurrentWeatherDateTime.Text = dt.ToString("t", new CultureInfo("ru-RU")) + "\n"
                     + dt.ToString("dddd", new CultureInfo("ru-RU")) + "\n"
@@ -42,7 +41,7 @@ namespace WeatherForecastApp
                 labelHumidity.Text = data.Main.Humidity.ToString() + " %";
                 labelPressure.Text = data.Main.Pressure.ToString() + " hPa";
                 labelWeatherDescription.Text = data.Weather[0].Description;
-                labelWindInfo.Text = Math.Round(data.Wind.WindSpeed).ToString() + " м/с, " + WindDirections.GetDirectionNameByDegree(data.Wind.WindDegree);
+                labelWindInfo.Text = Math.Round(data.Wind.WindSpeed).ToString() + " м/с, " + Controller.RequestWindDirection(data.Wind.WindDegree);
             }
             else MessageBox.Show("Ошибка при попытке получения данных.", "Данные отсутствуют", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
