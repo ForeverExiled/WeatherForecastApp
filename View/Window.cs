@@ -41,6 +41,7 @@ namespace WeatherForecastApp
 
         private void FillCurrentWeather(CurrentWeatherResponseWrapper data)
         {
+            groupBoxCurrentWeather.Text = comboBoxLocationList.Text;
             pictureBoxWeatherConditionIcon.Image = new Bitmap(Controller.RequestIconPath(data.CurrentWeatherResponse.Weather[0].Icon));
             var dt = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(data.CurrentWeatherResponse.Timestamp + data.City.Timezone);
             labelCurrentWeatherDateTime.Text = dt.ToString("t", new CultureInfo("ru-RU")) + "\n"
@@ -58,7 +59,7 @@ namespace WeatherForecastApp
         private void buttonGetForecast_Click(object sender, EventArgs e)
         {
             if (comboBoxLocationList.SelectedValue != null) Controller.RequestOldForecastDataDeletion(comboBoxLocationList.SelectedValue.ToString());
-            //var data = Controller.RequestApiForecastGetCall(comboBoxLocationList.Text);
+            var data = Controller.RequestApiForecastGetCall(comboBoxLocationList.Text);
         }
     }
 }

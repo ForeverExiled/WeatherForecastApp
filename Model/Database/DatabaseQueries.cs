@@ -67,9 +67,17 @@ namespace WeatherForecastApp.Model.Database
 
         public static void RemoveOldForecastData(string cityId)
         {
-            List<Forecast> entries = dbContext.Forecasts.Where(forecast => forecast.FkCity == int.Parse(cityId)).ToList();
+            List<Forecast> entries = GetForecastList(cityId);
             foreach (var forecast in entries) dbContext.Forecasts.Remove(forecast);
             dbContext.SaveChanges();
+        }
+
+        public static List<Forecast> GetForecastList(string cityId)
+        {
+            List<Forecast> list = dbContext.Forecasts
+                .Where(forecast => forecast.FkCity == int.Parse(cityId))
+                .ToList();
+            return list;
         }
     }
 }
