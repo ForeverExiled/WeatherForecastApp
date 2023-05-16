@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WeatherForecastApp.Api;
+using WeatherForecastApp.Database;
 using WeatherForecastApp.Model.Api;
 using WeatherForecastApp.Model.Database;
 
@@ -8,28 +10,28 @@ namespace WeatherForecastApp.Controller
 {
     public class Controller
     {
-        private Form View;
-
-        public Controller(Form view)
-        {
-            View = view;
-        }
-
         public CurrentWeatherResponse RequestApiCurrentGetCall(string cityName)
         {
-            return WeatherRequests.GetCurrentWeatherData(cityName);
+            var deserializedResponse = ApiRequests.GetCurrentWeatherData(cityName);
+            return deserializedResponse;
         }
 
         public WeatherForecastResponse RequestApiForecastGetCall(string cityName)
         {
-            WeatherForecastResponse deserializedResponse = WeatherRequests.GetWeatherForecast(cityName);
-            RequestDataInsertion(deserializedResponse, DateTime.Now);
+            WeatherForecastResponse deserializedResponse = ApiRequests.GetWeatherForecast(cityName);
+            RequestForecastDataInsertion(deserializedResponse);
             return deserializedResponse;
         }
 
-        public void RequestDataInsertion(WeatherForecastResponse data, DateTime requestTime)
+        public void RequestForecastDataInsertion(WeatherForecastResponse data)
         {
-            DatabaseQueries.InsertIntoDatabase(data, requestTime);
+            DatabaseQueries.InsertForecastData(data);
+        }
+
+        public List<City> RequestCityList()
+        {
+            List<City> list = DatabaseQueries.GetCityList();
+            return list;
         }
     }
 }

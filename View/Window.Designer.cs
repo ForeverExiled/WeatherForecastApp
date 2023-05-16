@@ -80,8 +80,6 @@ namespace WeatherForecastApp
             // comboBoxLocationList
             // 
             this.comboBoxLocationList.FormattingEnabled = true;
-            this.comboBoxLocationList.Items.AddRange(new object[] {
-            "Тюмень"});
             this.comboBoxLocationList.Location = new System.Drawing.Point(6, 40);
             this.comboBoxLocationList.Name = "comboBoxLocationList";
             this.comboBoxLocationList.Size = new System.Drawing.Size(220, 23);
@@ -95,6 +93,7 @@ namespace WeatherForecastApp
             this.button1.TabIndex = 12;
             this.button1.Text = "Узнать прогноз на следующие 5 дней";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 

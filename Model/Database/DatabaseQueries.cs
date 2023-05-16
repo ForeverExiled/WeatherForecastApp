@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using WeatherForecastApp.Api;
 using WeatherForecastApp.Database;
 
@@ -8,8 +10,9 @@ namespace WeatherForecastApp.Model.Database
     {
         private static WeatherDBContext dbContext = new WeatherDBContext();
 
-        public static void InsertIntoDatabase(WeatherForecastResponse deserializedResponse, DateTime requestTime)
+        public static void InsertForecastData(WeatherForecastResponse deserializedResponse)
         {
+            DateTime requestTime = DateTime.Now;
             var city = (City)dbContext.Find(typeof(City), deserializedResponse.City.Id);
             if (city is null)
             {
@@ -42,6 +45,12 @@ namespace WeatherForecastApp.Model.Database
                 dbContext.Forecasts.Add(dbForecast);
             }
             dbContext.SaveChanges();
+        }
+
+        public static List<City> GetCityList()
+        {
+            List<City> list = dbContext.Cities.OrderBy(city => city.Name).ToList();
+            return list;
         }
     }
 }

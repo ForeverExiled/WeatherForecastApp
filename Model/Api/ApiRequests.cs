@@ -4,7 +4,7 @@ using WeatherForecastApp.Api;
 
 namespace WeatherForecastApp.Model.Api
 {
-    public static class WeatherRequests
+    public static class ApiRequests
     {
         public static CurrentWeatherResponse GetCurrentWeatherData(string cityName)
         {
