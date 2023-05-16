@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using WeatherForecastApp.Api;
 using WeatherForecastApp.Database;
 using WeatherForecastApp.Model;
@@ -51,6 +50,11 @@ namespace WeatherForecastApp.Controller
         public void RequestOldForecastDataDeletion(string cityId)
         {
             DatabaseQueries.RemoveOldForecastData(cityId);
+        }
+
+        public bool RequestForecastDataRelevanceCheck(string cityId)
+        {
+            return DatabaseQueries.IsForecastDataRelevant(cityId);
         }
     }
 }

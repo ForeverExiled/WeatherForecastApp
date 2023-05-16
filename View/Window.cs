@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Windows.Forms;
 using WeatherForecastApp.Api;
 
@@ -14,22 +13,19 @@ namespace WeatherForecastApp
         public Window()
         {
             InitializeComponent();
+            comboBoxLocationList.DisplayMember = "Name";
+            comboBoxLocationList.ValueMember = "Id";
             Model.Database.DatabaseQueries.NewCityAdded += LoadCities;
             LoadCities(null, EventArgs.Empty);
-            comboBoxLocationList.SelectedIndex = 0;
+            comboBoxLocationList.SelectedIndex = Properties.Settings.Default.ComboboxCityIndex;
+            buttonGetCurrentWeather_Click(this, EventArgs.Empty);
+            if (!Controller.RequestForecastDataRelevanceCheck(comboBoxLocationList.SelectedValue.ToString())) buttonGetForecast_Click(this, EventArgs.Empty);
         }
 
         private void LoadCities(object sender, EventArgs e)
         {
             var cityList = Controller.RequestCityList();
-            if (comboBoxLocationList.DataSource == null)
-            {
-                comboBoxLocationList.DisplayMember = "Name";
-                comboBoxLocationList.ValueMember = "Id";
-            }
-            var item = comboBoxLocationList.SelectedItem;
             comboBoxLocationList.DataSource = cityList;
-            comboBoxLocationList.SelectedItem = item;
         }
 
         private void buttonGetCurrentWeather_Click(object sender, System.EventArgs e)
@@ -60,6 +56,12 @@ namespace WeatherForecastApp
         {
             if (comboBoxLocationList.SelectedValue != null) Controller.RequestOldForecastDataDeletion(comboBoxLocationList.SelectedValue.ToString());
             var data = Controller.RequestApiForecastGetCall(comboBoxLocationList.Text);
+        }
+
+        private void Window_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.ComboboxCityIndex = comboBoxLocationList.SelectedIndex;
+            Properties.Settings.Default.Save();
         }
     }
 }

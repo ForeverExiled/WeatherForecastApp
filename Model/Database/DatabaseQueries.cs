@@ -79,5 +79,11 @@ namespace WeatherForecastApp.Model.Database
                 .ToList();
             return list;
         }
+
+        public static bool IsForecastDataRelevant(string cityId)
+        {
+            var entry = dbContext.Forecasts.Where(forecast => forecast.FkCity == int.Parse(cityId)).FirstOrDefault();    
+            return !(entry == null || (DateTime.Now - entry.RequestTime.Value).Days > 0);
+        }
     }
 }

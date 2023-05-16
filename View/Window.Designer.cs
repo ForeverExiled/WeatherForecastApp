@@ -30,7 +30,6 @@ namespace WeatherForecastApp
         private void InitializeComponent()
         {
             buttonGetCurrentWeather = new System.Windows.Forms.Button();
-            labelLocationSelection = new System.Windows.Forms.Label();
             comboBoxLocationList = new System.Windows.Forms.ComboBox();
             buttonGetForecast = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,54 +58,44 @@ namespace WeatherForecastApp
             // 
             // buttonGetCurrentWeather
             // 
-            buttonGetCurrentWeather.Location = new System.Drawing.Point(6, 69);
+            buttonGetCurrentWeather.Location = new System.Drawing.Point(6, 57);
             buttonGetCurrentWeather.Name = "buttonGetCurrentWeather";
-            buttonGetCurrentWeather.Size = new System.Drawing.Size(105, 61);
+            buttonGetCurrentWeather.Size = new System.Drawing.Size(70, 40);
             buttonGetCurrentWeather.TabIndex = 6;
-            buttonGetCurrentWeather.Text = "Узнать текущую погоду";
+            buttonGetCurrentWeather.Text = "Погода\r\nсейчас";
             buttonGetCurrentWeather.UseVisualStyleBackColor = true;
             buttonGetCurrentWeather.Click += buttonGetCurrentWeather_Click;
-            // 
-            // labelLocationSelection
-            // 
-            labelLocationSelection.AutoSize = true;
-            labelLocationSelection.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            labelLocationSelection.Location = new System.Drawing.Point(6, 19);
-            labelLocationSelection.Name = "labelLocationSelection";
-            labelLocationSelection.Size = new System.Drawing.Size(128, 18);
-            labelLocationSelection.TabIndex = 10;
-            labelLocationSelection.Text = "Выбор города";
             // 
             // comboBoxLocationList
             // 
             comboBoxLocationList.FormattingEnabled = true;
-            comboBoxLocationList.Location = new System.Drawing.Point(6, 40);
+            comboBoxLocationList.Location = new System.Drawing.Point(6, 28);
             comboBoxLocationList.Name = "comboBoxLocationList";
             comboBoxLocationList.Size = new System.Drawing.Size(220, 23);
             comboBoxLocationList.TabIndex = 11;
             // 
             // buttonGetForecast
             // 
-            buttonGetForecast.Location = new System.Drawing.Point(121, 69);
+            buttonGetForecast.Location = new System.Drawing.Point(155, 57);
             buttonGetForecast.Name = "buttonGetForecast";
-            buttonGetForecast.Size = new System.Drawing.Size(105, 61);
+            buttonGetForecast.Size = new System.Drawing.Size(70, 40);
             buttonGetForecast.TabIndex = 12;
-            buttonGetForecast.Text = "Узнать прогноз на следующие 5 дней";
+            buttonGetForecast.Text = "Прогноз\r\nна 5 дней";
             buttonGetForecast.UseVisualStyleBackColor = true;
             buttonGetForecast.Click += buttonGetForecast_Click;
             // 
             // groupBox1
             // 
             groupBox1.AutoSize = true;
-            groupBox1.Controls.Add(labelLocationSelection);
             groupBox1.Controls.Add(buttonGetForecast);
             groupBox1.Controls.Add(buttonGetCurrentWeather);
             groupBox1.Controls.Add(comboBoxLocationList);
             groupBox1.Location = new System.Drawing.Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(232, 152);
+            groupBox1.Size = new System.Drawing.Size(232, 119);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
+            groupBox1.Text = "Выбор города";
             // 
             // groupBoxCurrentWeather
             // 
@@ -285,8 +274,8 @@ namespace WeatherForecastApp
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             Name = "Window";
             Text = "Прогноз погоды";
+            FormClosing += Window_FormClosing;
             groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBoxCurrentWeather.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -299,7 +288,6 @@ namespace WeatherForecastApp
 
         #endregion
         private System.Windows.Forms.Button buttonGetCurrentWeather;
-        private System.Windows.Forms.Label labelLocationSelection;
         private System.Windows.Forms.ComboBox comboBoxLocationList;
         private System.Windows.Forms.Button buttonGetForecast;
         private System.Windows.Forms.GroupBox groupBox1;
