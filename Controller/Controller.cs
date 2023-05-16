@@ -10,11 +10,13 @@ namespace WeatherForecastApp.Controller
 {
     public class Controller
     {
-        public CurrentWeatherResponse RequestApiCurrentGetCall(string cityName)
+        public CurrentWeatherResponseWrapper RequestApiCurrentGetCall(string cityName)
         {
             var deserializedResponse = ApiRequests.GetCurrentWeatherData(cityName);
+            DatabaseQueries.GetCity(deserializedResponse.City);
             return deserializedResponse;
         }
+
 
         public WeatherForecastResponse RequestApiForecastGetCall(string cityName)
         {
@@ -44,6 +46,11 @@ namespace WeatherForecastApp.Controller
         {
             var direction = WindDirections.GetDirectionNameByDegree(degree);
             return direction;
+        }
+
+        public void RequestOldForecastDataDeletion(string cityId)
+        {
+            DatabaseQueries.RemoveOldForecastData(cityId);
         }
     }
 }

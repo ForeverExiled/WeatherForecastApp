@@ -2,15 +2,15 @@
 
 namespace WeatherForecastApp.Api
 {
-    public class CityInfo
+    public class CityData
     {
         [JsonProperty("id")]
         public int Id;
         [JsonProperty("name")]
         public string Name;
         [JsonProperty("coord")]
-        public CoordinatesInfo Coordinates;
+        public CoordinatesData Coordinates;
         [JsonProperty("timezone")]
-        public int Timezone;
+        public ulong Timezone;
     }
 }

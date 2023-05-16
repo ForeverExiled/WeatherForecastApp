@@ -2,7 +2,7 @@
 
 namespace WeatherForecastApp.Api
 {
-    public class WindInfo
+    public class WindData
     {
         [JsonProperty("speed")]
         public double WindSpeed;

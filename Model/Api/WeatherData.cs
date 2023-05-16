@@ -2,7 +2,7 @@
 
 namespace WeatherForecastApp.Api
 {
-    public class WeatherInfo
+    public class WeatherData
     {
         [JsonProperty("description")]
         public string Description;

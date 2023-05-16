@@ -9,23 +9,12 @@ namespace WeatherForecastApp.Model.Database
     public static class DatabaseQueries
     {
         private static WeatherDBContext dbContext = new WeatherDBContext();
+        public static event EventHandler NewCityAdded;
 
         public static void InsertForecastData(WeatherForecastResponse deserializedResponse)
         {
             DateTime requestTime = DateTime.Now;
-            var city = (City)dbContext.Find(typeof(City), deserializedResponse.City.Id);
-            if (city is null)
-            {
-                city = new City()
-                {
-                    Id = deserializedResponse.City.Id,
-                    Name = deserializedResponse.City.Name,
-                    Latitude = deserializedResponse.City.Coordinates.Latitide,
-                    Longitude = deserializedResponse.City.Coordinates.Longitude,
-                    Timezone = deserializedResponse.City.Timezone
-                };
-                dbContext.Cities.Add(city);
-            }
+            var city = GetCity(deserializedResponse.City);
             foreach (var forecast in deserializedResponse.Forecasts)
             {
                 var dbForecast = new Forecast()
@@ -47,10 +36,40 @@ namespace WeatherForecastApp.Model.Database
             dbContext.SaveChanges();
         }
 
+        public static City GetCity(CityData cityData)
+        {
+            var city = (City)dbContext.Find(typeof(City), cityData.Id);
+            if (city == null) city = InsertCityData(cityData);
+            return city;
+        }
+
+        private static City InsertCityData(CityData cityData)
+        {
+            var city = new City()
+            {
+                Id = cityData.Id,
+                Name = cityData.Name,
+                Latitude = cityData.Coordinates.Latitide,
+                Longitude = cityData.Coordinates.Longitude,
+                Timezone = cityData.Timezone
+            };
+            dbContext.Cities.Add(city);
+            dbContext.SaveChanges();
+            NewCityAdded?.Invoke(null, EventArgs.Empty);
+            return city;
+        }
+
         public static List<City> GetCityList()
         {
             List<City> list = dbContext.Cities.OrderBy(city => city.Name).ToList();
             return list;
+        }
+
+        public static void RemoveOldForecastData(string cityId)
+        {
+            List<Forecast> entries = dbContext.Forecasts.Where(forecast => forecast.FkCity == int.Parse(cityId)).ToList();
+            foreach (var forecast in entries) dbContext.Forecasts.Remove(forecast);
+            dbContext.SaveChanges();
         }
     }
 }

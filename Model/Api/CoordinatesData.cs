@@ -2,7 +2,7 @@
 
 namespace WeatherForecastApp.Api
 {
-    public class CoordinatesInfo
+    public class CoordinatesData
     {
         [JsonProperty("lat")]
         public double Latitide;

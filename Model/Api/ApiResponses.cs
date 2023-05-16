@@ -8,18 +8,32 @@ namespace WeatherForecastApp.Api
     public class CurrentWeatherResponse
     {
         [JsonProperty("weather")]
-        public List<WeatherInfo> Weather;
+        public List<WeatherData> Weather;
         [JsonProperty("main")]
-        public MainInfo Main;
+        public MainData Main;
         [JsonProperty("wind")]
-        public WindInfo Wind;
+        public WindData Wind;
+        [JsonProperty("dt")]
+        public ulong Timestamp;
+    }
+
+    public class CurrentWeatherResponseWrapper
+    {
+        public CurrentWeatherResponse CurrentWeatherResponse;
+        public CityData City;
+
+        public CurrentWeatherResponseWrapper(CurrentWeatherResponse currentWeatherResponse, CityData city)
+        {
+            CurrentWeatherResponse = currentWeatherResponse;
+            City = city;
+        }
     }
 
     public class WeatherForecastResponse
     {
         [JsonProperty("list")]
-        public List<TimestampInfo> Forecasts;
+        public List<TimestampData> Forecasts;
         [JsonProperty("city")]
-        public CityInfo City;
+        public CityData City;
     }
 }

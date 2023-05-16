@@ -4,15 +4,15 @@ using WeatherForecastApp.Api;
 
 namespace WeatherForecastApp.Model.Api
 {
-    public class TimestampInfo
+    public class TimestampData
     {
         [JsonProperty("dt")]
         public ulong Timestamp;
         [JsonProperty("main")]
-        public MainInfo Main;
+        public MainData Main;
         [JsonProperty("weather")]
-        public List<WeatherInfo> Weather;
+        public List<WeatherData> Weather;
         [JsonProperty("wind")]
-        public WindInfo Wind;
+        public WindData Wind;
     }
 }

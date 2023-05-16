@@ -16,7 +16,7 @@ namespace WeatherForecastApp.Database
         public string Name { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
-        public int? Timezone { get; set; }
+        public ulong? Timezone { get; set; }
 
         public List<Forecast> Forecasts { get; set; }
     }
