@@ -3,43 +3,33 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using WeatherForecastApp.Api;
+using WeatherForecastApp.View;
 
 namespace WeatherForecastApp
 {
-    public partial class Window : Form
+    public partial class MainWindow : Form
     {
         private Controller.Controller Controller = new Controller.Controller();
+        SettingsWindow SettingsWindow = new SettingsWindow();
 
-        public Window()
+        public MainWindow()
         {
             InitializeComponent();
-            comboBoxLocationList.DisplayMember = "Name";
-            comboBoxLocationList.ValueMember = "Id";
-            Model.Database.DatabaseQueries.NewCityAdded += LoadCities;
-            LoadCities(null, EventArgs.Empty);
-            comboBoxLocationList.SelectedIndex = Properties.Settings.Default.ComboboxCityIndex;
             buttonGetCurrentWeather_Click(this, EventArgs.Empty);
-            if (!Controller.RequestForecastDataRelevanceCheck(comboBoxLocationList.SelectedValue.ToString())) buttonGetForecast_Click(this, EventArgs.Empty);
+            if (!Controller.RequestForecastDataRelevanceCheck(SettingsWindow.GetSelectedCityId())) buttonGetForecast_Click(this, EventArgs.Empty);
         }
 
-        private void LoadCities(object sender, EventArgs e)
-        {
-            var cityList = Controller.RequestCityList();
-            comboBoxLocationList.DataSource = cityList;
-        }
 
         private void buttonGetCurrentWeather_Click(object sender, System.EventArgs e)
         {
-            var comboboxOldText = comboBoxLocationList.Text;
-            var data = Controller.RequestApiCurrentGetCall(comboBoxLocationList.Text);
-            comboBoxLocationList.Text = comboboxOldText;
+            var data = Controller.RequestApiCurrentGetCall(SettingsWindow.GetSelectedCityName());
             if (data != null) FillCurrentWeather(data);
             else MessageBox.Show("Ошибка при попытке получения данных.", "Данные отсутствуют", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void FillCurrentWeather(CurrentWeatherResponseWrapper data)
         {
-            groupBoxCurrentWeather.Text = comboBoxLocationList.Text;
+            groupBoxCurrentWeather.Text = SettingsWindow.GetSelectedCityName();
             if (data.CurrentWeatherResponse.Weather[0].Icon.Contains("d")) pictureBoxWeatherConditionIcon.BackColor = Color.LightSkyBlue;
             else pictureBoxWeatherConditionIcon.BackColor = Color.SlateBlue;
             pictureBoxWeatherConditionIcon.Image = new Bitmap(Controller.RequestIconPath(data.CurrentWeatherResponse.Weather[0].Icon));
@@ -58,14 +48,14 @@ namespace WeatherForecastApp
 
         private void buttonGetForecast_Click(object sender, EventArgs e)
         {
-            if (comboBoxLocationList.SelectedValue != null) Controller.RequestOldForecastDataDeletion(comboBoxLocationList.SelectedValue.ToString());
-            var data = Controller.RequestApiForecastGetCall(comboBoxLocationList.Text);
+            SettingsWindow.ShowDialog();
+            if (SettingsWindow.IsSelectedCityInTheList()) Controller.RequestOldForecastDataDeletion(SettingsWindow.GetSelectedCityId());
+            var data = Controller.RequestApiForecastGetCall(SettingsWindow.GetSelectedCityName());
         }
 
-        private void Window_FormClosing(object sender, FormClosingEventArgs e)
+        private void toolStripMenuItem_Settings_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ComboboxCityIndex = comboBoxLocationList.SelectedIndex;
-            Properties.Settings.Default.Save();
+            SettingsWindow.ShowDialog();
         }
     }
 }

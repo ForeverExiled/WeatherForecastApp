@@ -1,7 +1,7 @@
 ﻿
 namespace WeatherForecastApp
 {
-    partial class Window
+    partial class MainWindow
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,9 +30,7 @@ namespace WeatherForecastApp
         private void InitializeComponent()
         {
             this.buttonGetCurrentWeather = new System.Windows.Forms.Button();
-            this.comboBoxLocationList = new System.Windows.Forms.ComboBox();
             this.buttonGetForecast = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxCurrentWeather = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,53 +47,34 @@ namespace WeatherForecastApp
             this.pictureBoxWeatherConditionIcon = new System.Windows.Forms.PictureBox();
             this.labelCurrentWeatherDateTime = new System.Windows.Forms.Label();
             this.labelWeatherDescription = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem_Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxCurrentWeather.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeatherConditionIcon)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonGetCurrentWeather
             // 
-            this.buttonGetCurrentWeather.Location = new System.Drawing.Point(6, 57);
+            this.buttonGetCurrentWeather.Location = new System.Drawing.Point(12, 27);
             this.buttonGetCurrentWeather.Name = "buttonGetCurrentWeather";
-            this.buttonGetCurrentWeather.Size = new System.Drawing.Size(70, 40);
+            this.buttonGetCurrentWeather.Size = new System.Drawing.Size(90, 40);
             this.buttonGetCurrentWeather.TabIndex = 6;
             this.buttonGetCurrentWeather.Text = "Погода\r\nсейчас";
             this.buttonGetCurrentWeather.UseVisualStyleBackColor = true;
             this.buttonGetCurrentWeather.Click += new System.EventHandler(this.buttonGetCurrentWeather_Click);
             // 
-            // comboBoxLocationList
-            // 
-            this.comboBoxLocationList.FormattingEnabled = true;
-            this.comboBoxLocationList.Location = new System.Drawing.Point(6, 28);
-            this.comboBoxLocationList.Name = "comboBoxLocationList";
-            this.comboBoxLocationList.Size = new System.Drawing.Size(220, 23);
-            this.comboBoxLocationList.TabIndex = 11;
-            // 
             // buttonGetForecast
             // 
-            this.buttonGetForecast.Location = new System.Drawing.Point(155, 57);
+            this.buttonGetForecast.Location = new System.Drawing.Point(108, 27);
             this.buttonGetForecast.Name = "buttonGetForecast";
-            this.buttonGetForecast.Size = new System.Drawing.Size(70, 40);
+            this.buttonGetForecast.Size = new System.Drawing.Size(90, 40);
             this.buttonGetForecast.TabIndex = 12;
             this.buttonGetForecast.Text = "Прогноз\r\nна 5 дней";
             this.buttonGetForecast.UseVisualStyleBackColor = true;
             this.buttonGetForecast.Click += new System.EventHandler(this.buttonGetForecast_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.buttonGetForecast);
-            this.groupBox1.Controls.Add(this.buttonGetCurrentWeather);
-            this.groupBox1.Controls.Add(this.comboBoxLocationList);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(232, 119);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Выбор города";
             // 
             // groupBoxCurrentWeather
             // 
@@ -105,9 +84,9 @@ namespace WeatherForecastApp
             this.groupBoxCurrentWeather.Controls.Add(this.groupBox2);
             this.groupBoxCurrentWeather.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBoxCurrentWeather.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxCurrentWeather.Location = new System.Drawing.Point(250, 12);
+            this.groupBoxCurrentWeather.Location = new System.Drawing.Point(12, 137);
             this.groupBoxCurrentWeather.Name = "groupBoxCurrentWeather";
-            this.groupBoxCurrentWeather.Size = new System.Drawing.Size(234, 302);
+            this.groupBoxCurrentWeather.Size = new System.Drawing.Size(202, 302);
             this.groupBoxCurrentWeather.TabIndex = 14;
             this.groupBoxCurrentWeather.TabStop = false;
             this.groupBoxCurrentWeather.Text = "нет данных";
@@ -126,7 +105,7 @@ namespace WeatherForecastApp
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(6, 136);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(222, 144);
+            this.groupBox3.Size = new System.Drawing.Size(190, 144);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
@@ -232,7 +211,7 @@ namespace WeatherForecastApp
             this.groupBox2.Controls.Add(this.labelWeatherDescription);
             this.groupBox2.Location = new System.Drawing.Point(6, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(222, 111);
+            this.groupBox2.Size = new System.Drawing.Size(190, 111);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
@@ -265,24 +244,44 @@ namespace WeatherForecastApp
             this.labelWeatherDescription.TabIndex = 9;
             this.labelWeatherDescription.Text = "нет данных";
             // 
-            // Window
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_Settings});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(825, 24);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem_Settings
+            // 
+            this.toolStripMenuItem_Settings.Name = "toolStripMenuItem_Settings";
+            this.toolStripMenuItem_Settings.Size = new System.Drawing.Size(79, 20);
+            this.toolStripMenuItem_Settings.Text = "Настройки";
+            this.toolStripMenuItem_Settings.Click += new System.EventHandler(this.toolStripMenuItem_Settings_Click);
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 324);
+            this.ClientSize = new System.Drawing.Size(825, 449);
+            this.Controls.Add(this.buttonGetForecast);
             this.Controls.Add(this.groupBoxCurrentWeather);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonGetCurrentWeather);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Window";
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "MainWindow";
             this.Text = "Прогноз погоды";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Window_FormClosing);
-            this.groupBox1.ResumeLayout(false);
             this.groupBoxCurrentWeather.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeatherConditionIcon)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,9 +289,7 @@ namespace WeatherForecastApp
 
         #endregion
         private System.Windows.Forms.Button buttonGetCurrentWeather;
-        private System.Windows.Forms.ComboBox comboBoxLocationList;
         private System.Windows.Forms.Button buttonGetForecast;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBoxCurrentWeather;
         private System.Windows.Forms.Label labelCurrentWeatherDateTime;
         private System.Windows.Forms.PictureBox pictureBoxWeatherConditionIcon;
@@ -309,6 +306,8 @@ namespace WeatherForecastApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Settings;
     }
 }
 
