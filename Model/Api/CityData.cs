@@ -11,6 +11,6 @@ namespace WeatherForecastApp.Api
         [JsonProperty("coord")]
         public CoordinatesData Coordinates;
         [JsonProperty("timezone")]
-        public ulong Timezone;
+        public long Timezone;
     }
 }

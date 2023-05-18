@@ -29,261 +29,263 @@ namespace WeatherForecastApp
         /// </summary>
         private void InitializeComponent()
         {
-            buttonGetCurrentWeather = new System.Windows.Forms.Button();
-            comboBoxLocationList = new System.Windows.Forms.ComboBox();
-            buttonGetForecast = new System.Windows.Forms.Button();
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            groupBoxCurrentWeather = new System.Windows.Forms.GroupBox();
-            groupBox3 = new System.Windows.Forms.GroupBox();
-            label1 = new System.Windows.Forms.Label();
-            labelTemperature = new System.Windows.Forms.Label();
-            labelWindInfo = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            labelHumidity = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            labelPressure = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            labelFeelsLike = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            groupBox2 = new System.Windows.Forms.GroupBox();
-            pictureBoxWeatherConditionIcon = new System.Windows.Forms.PictureBox();
-            labelCurrentWeatherDateTime = new System.Windows.Forms.Label();
-            labelWeatherDescription = new System.Windows.Forms.Label();
-            groupBox1.SuspendLayout();
-            groupBoxCurrentWeather.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxWeatherConditionIcon).BeginInit();
-            SuspendLayout();
+            this.buttonGetCurrentWeather = new System.Windows.Forms.Button();
+            this.comboBoxLocationList = new System.Windows.Forms.ComboBox();
+            this.buttonGetForecast = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCurrentWeather = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelTemperature = new System.Windows.Forms.Label();
+            this.labelWindInfo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelHumidity = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelPressure = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelFeelsLike = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBoxWeatherConditionIcon = new System.Windows.Forms.PictureBox();
+            this.labelCurrentWeatherDateTime = new System.Windows.Forms.Label();
+            this.labelWeatherDescription = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBoxCurrentWeather.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeatherConditionIcon)).BeginInit();
+            this.SuspendLayout();
             // 
             // buttonGetCurrentWeather
             // 
-            buttonGetCurrentWeather.Location = new System.Drawing.Point(6, 57);
-            buttonGetCurrentWeather.Name = "buttonGetCurrentWeather";
-            buttonGetCurrentWeather.Size = new System.Drawing.Size(70, 40);
-            buttonGetCurrentWeather.TabIndex = 6;
-            buttonGetCurrentWeather.Text = "Погода\r\nсейчас";
-            buttonGetCurrentWeather.UseVisualStyleBackColor = true;
-            buttonGetCurrentWeather.Click += buttonGetCurrentWeather_Click;
+            this.buttonGetCurrentWeather.Location = new System.Drawing.Point(6, 57);
+            this.buttonGetCurrentWeather.Name = "buttonGetCurrentWeather";
+            this.buttonGetCurrentWeather.Size = new System.Drawing.Size(70, 40);
+            this.buttonGetCurrentWeather.TabIndex = 6;
+            this.buttonGetCurrentWeather.Text = "Погода\r\nсейчас";
+            this.buttonGetCurrentWeather.UseVisualStyleBackColor = true;
+            this.buttonGetCurrentWeather.Click += new System.EventHandler(this.buttonGetCurrentWeather_Click);
             // 
             // comboBoxLocationList
             // 
-            comboBoxLocationList.FormattingEnabled = true;
-            comboBoxLocationList.Location = new System.Drawing.Point(6, 28);
-            comboBoxLocationList.Name = "comboBoxLocationList";
-            comboBoxLocationList.Size = new System.Drawing.Size(220, 23);
-            comboBoxLocationList.TabIndex = 11;
+            this.comboBoxLocationList.FormattingEnabled = true;
+            this.comboBoxLocationList.Location = new System.Drawing.Point(6, 28);
+            this.comboBoxLocationList.Name = "comboBoxLocationList";
+            this.comboBoxLocationList.Size = new System.Drawing.Size(220, 23);
+            this.comboBoxLocationList.TabIndex = 11;
             // 
             // buttonGetForecast
             // 
-            buttonGetForecast.Location = new System.Drawing.Point(155, 57);
-            buttonGetForecast.Name = "buttonGetForecast";
-            buttonGetForecast.Size = new System.Drawing.Size(70, 40);
-            buttonGetForecast.TabIndex = 12;
-            buttonGetForecast.Text = "Прогноз\r\nна 5 дней";
-            buttonGetForecast.UseVisualStyleBackColor = true;
-            buttonGetForecast.Click += buttonGetForecast_Click;
+            this.buttonGetForecast.Location = new System.Drawing.Point(155, 57);
+            this.buttonGetForecast.Name = "buttonGetForecast";
+            this.buttonGetForecast.Size = new System.Drawing.Size(70, 40);
+            this.buttonGetForecast.TabIndex = 12;
+            this.buttonGetForecast.Text = "Прогноз\r\nна 5 дней";
+            this.buttonGetForecast.UseVisualStyleBackColor = true;
+            this.buttonGetForecast.Click += new System.EventHandler(this.buttonGetForecast_Click);
             // 
             // groupBox1
             // 
-            groupBox1.AutoSize = true;
-            groupBox1.Controls.Add(buttonGetForecast);
-            groupBox1.Controls.Add(buttonGetCurrentWeather);
-            groupBox1.Controls.Add(comboBoxLocationList);
-            groupBox1.Location = new System.Drawing.Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(232, 119);
-            groupBox1.TabIndex = 13;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Выбор города";
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.buttonGetForecast);
+            this.groupBox1.Controls.Add(this.buttonGetCurrentWeather);
+            this.groupBox1.Controls.Add(this.comboBoxLocationList);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(232, 119);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбор города";
             // 
             // groupBoxCurrentWeather
             // 
-            groupBoxCurrentWeather.AutoSize = true;
-            groupBoxCurrentWeather.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            groupBoxCurrentWeather.Controls.Add(groupBox3);
-            groupBoxCurrentWeather.Controls.Add(groupBox2);
-            groupBoxCurrentWeather.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            groupBoxCurrentWeather.ForeColor = System.Drawing.Color.Black;
-            groupBoxCurrentWeather.Location = new System.Drawing.Point(250, 12);
-            groupBoxCurrentWeather.Name = "groupBoxCurrentWeather";
-            groupBoxCurrentWeather.Size = new System.Drawing.Size(234, 302);
-            groupBoxCurrentWeather.TabIndex = 14;
-            groupBoxCurrentWeather.TabStop = false;
-            groupBoxCurrentWeather.Text = "нет данных";
+            this.groupBoxCurrentWeather.AutoSize = true;
+            this.groupBoxCurrentWeather.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBoxCurrentWeather.Controls.Add(this.groupBox3);
+            this.groupBoxCurrentWeather.Controls.Add(this.groupBox2);
+            this.groupBoxCurrentWeather.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxCurrentWeather.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxCurrentWeather.Location = new System.Drawing.Point(250, 12);
+            this.groupBoxCurrentWeather.Name = "groupBoxCurrentWeather";
+            this.groupBoxCurrentWeather.Size = new System.Drawing.Size(234, 302);
+            this.groupBoxCurrentWeather.TabIndex = 14;
+            this.groupBoxCurrentWeather.TabStop = false;
+            this.groupBoxCurrentWeather.Text = "нет данных";
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(label1);
-            groupBox3.Controls.Add(labelTemperature);
-            groupBox3.Controls.Add(labelWindInfo);
-            groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(labelHumidity);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(labelPressure);
-            groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(labelFeelsLike);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Location = new System.Drawing.Point(6, 136);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(222, 144);
-            groupBox3.TabIndex = 15;
-            groupBox3.TabStop = false;
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.labelTemperature);
+            this.groupBox3.Controls.Add(this.labelWindInfo);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.labelHumidity);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.labelPressure);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.labelFeelsLike);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(6, 136);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(222, 144);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(20, 19);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(80, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Температура:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Температура:";
             // 
             // labelTemperature
             // 
-            labelTemperature.AutoSize = true;
-            labelTemperature.Location = new System.Drawing.Point(106, 19);
-            labelTemperature.Name = "labelTemperature";
-            labelTemperature.Size = new System.Drawing.Size(70, 15);
-            labelTemperature.TabIndex = 4;
-            labelTemperature.Text = "нет данных";
-            labelTemperature.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelTemperature.AutoSize = true;
+            this.labelTemperature.Location = new System.Drawing.Point(106, 19);
+            this.labelTemperature.Name = "labelTemperature";
+            this.labelTemperature.Size = new System.Drawing.Size(70, 15);
+            this.labelTemperature.TabIndex = 4;
+            this.labelTemperature.Text = "нет данных";
+            this.labelTemperature.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelWindInfo
             // 
-            labelWindInfo.AutoSize = true;
-            labelWindInfo.Location = new System.Drawing.Point(106, 118);
-            labelWindInfo.Name = "labelWindInfo";
-            labelWindInfo.Size = new System.Drawing.Size(70, 15);
-            labelWindInfo.TabIndex = 13;
-            labelWindInfo.Text = "нет данных";
-            labelWindInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelWindInfo.AutoSize = true;
+            this.labelWindInfo.Location = new System.Drawing.Point(106, 118);
+            this.labelWindInfo.Name = "labelWindInfo";
+            this.labelWindInfo.Size = new System.Drawing.Size(70, 15);
+            this.labelWindInfo.TabIndex = 13;
+            this.labelWindInfo.Text = "нет данных";
+            this.labelWindInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(5, 43);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(95, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Ощущается как:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Ощущается как:";
             // 
             // labelHumidity
             // 
-            labelHumidity.AutoSize = true;
-            labelHumidity.Location = new System.Drawing.Point(106, 93);
-            labelHumidity.Name = "labelHumidity";
-            labelHumidity.Size = new System.Drawing.Size(70, 15);
-            labelHumidity.TabIndex = 12;
-            labelHumidity.Text = "нет данных";
-            labelHumidity.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelHumidity.AutoSize = true;
+            this.labelHumidity.Location = new System.Drawing.Point(106, 93);
+            this.labelHumidity.Name = "labelHumidity";
+            this.labelHumidity.Size = new System.Drawing.Size(70, 15);
+            this.labelHumidity.TabIndex = 12;
+            this.labelHumidity.Text = "нет данных";
+            this.labelHumidity.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(38, 67);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(62, 15);
-            label4.TabIndex = 6;
-            label4.Text = "Давление:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Давление:";
             // 
             // labelPressure
             // 
-            labelPressure.AutoSize = true;
-            labelPressure.Location = new System.Drawing.Point(106, 67);
-            labelPressure.Name = "labelPressure";
-            labelPressure.Size = new System.Drawing.Size(70, 15);
-            labelPressure.TabIndex = 11;
-            labelPressure.Text = "нет данных";
-            labelPressure.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelPressure.AutoSize = true;
+            this.labelPressure.Location = new System.Drawing.Point(106, 67);
+            this.labelPressure.Name = "labelPressure";
+            this.labelPressure.Size = new System.Drawing.Size(70, 15);
+            this.labelPressure.TabIndex = 11;
+            this.labelPressure.Text = "нет данных";
+            this.labelPressure.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(31, 93);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(69, 15);
-            label5.TabIndex = 7;
-            label5.Text = "Влажность:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Влажность:";
             // 
             // labelFeelsLike
             // 
-            labelFeelsLike.AutoSize = true;
-            labelFeelsLike.Location = new System.Drawing.Point(106, 43);
-            labelFeelsLike.Name = "labelFeelsLike";
-            labelFeelsLike.Size = new System.Drawing.Size(70, 15);
-            labelFeelsLike.TabIndex = 10;
-            labelFeelsLike.Text = "нет данных";
-            labelFeelsLike.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelFeelsLike.AutoSize = true;
+            this.labelFeelsLike.Location = new System.Drawing.Point(106, 43);
+            this.labelFeelsLike.Name = "labelFeelsLike";
+            this.labelFeelsLike.Size = new System.Drawing.Size(70, 15);
+            this.labelFeelsLike.TabIndex = 10;
+            this.labelFeelsLike.Text = "нет данных";
+            this.labelFeelsLike.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(59, 118);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(41, 15);
-            label6.TabIndex = 8;
-            label6.Text = "Ветер:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(59, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Ветер:";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(pictureBoxWeatherConditionIcon);
-            groupBox2.Controls.Add(labelCurrentWeatherDateTime);
-            groupBox2.Controls.Add(labelWeatherDescription);
-            groupBox2.Location = new System.Drawing.Point(6, 19);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(222, 111);
-            groupBox2.TabIndex = 14;
-            groupBox2.TabStop = false;
+            this.groupBox2.Controls.Add(this.pictureBoxWeatherConditionIcon);
+            this.groupBox2.Controls.Add(this.labelCurrentWeatherDateTime);
+            this.groupBox2.Controls.Add(this.labelWeatherDescription);
+            this.groupBox2.Location = new System.Drawing.Point(6, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(222, 111);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
             // 
             // pictureBoxWeatherConditionIcon
             // 
-            pictureBoxWeatherConditionIcon.BackColor = System.Drawing.Color.LightGray;
-            pictureBoxWeatherConditionIcon.Location = new System.Drawing.Point(0, 9);
-            pictureBoxWeatherConditionIcon.Name = "pictureBoxWeatherConditionIcon";
-            pictureBoxWeatherConditionIcon.Size = new System.Drawing.Size(100, 100);
-            pictureBoxWeatherConditionIcon.TabIndex = 2;
-            pictureBoxWeatherConditionIcon.TabStop = false;
+            this.pictureBoxWeatherConditionIcon.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBoxWeatherConditionIcon.Location = new System.Drawing.Point(0, 9);
+            this.pictureBoxWeatherConditionIcon.Name = "pictureBoxWeatherConditionIcon";
+            this.pictureBoxWeatherConditionIcon.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxWeatherConditionIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWeatherConditionIcon.TabIndex = 2;
+            this.pictureBoxWeatherConditionIcon.TabStop = false;
             // 
             // labelCurrentWeatherDateTime
             // 
-            labelCurrentWeatherDateTime.AutoSize = true;
-            labelCurrentWeatherDateTime.BackColor = System.Drawing.Color.Transparent;
-            labelCurrentWeatherDateTime.Location = new System.Drawing.Point(106, 14);
-            labelCurrentWeatherDateTime.Name = "labelCurrentWeatherDateTime";
-            labelCurrentWeatherDateTime.Size = new System.Drawing.Size(70, 15);
-            labelCurrentWeatherDateTime.TabIndex = 1;
-            labelCurrentWeatherDateTime.Text = "нет данных";
+            this.labelCurrentWeatherDateTime.AutoSize = true;
+            this.labelCurrentWeatherDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.labelCurrentWeatherDateTime.Location = new System.Drawing.Point(106, 14);
+            this.labelCurrentWeatherDateTime.Name = "labelCurrentWeatherDateTime";
+            this.labelCurrentWeatherDateTime.Size = new System.Drawing.Size(70, 15);
+            this.labelCurrentWeatherDateTime.TabIndex = 1;
+            this.labelCurrentWeatherDateTime.Text = "нет данных";
             // 
             // labelWeatherDescription
             // 
-            labelWeatherDescription.AutoSize = true;
-            labelWeatherDescription.Location = new System.Drawing.Point(106, 56);
-            labelWeatherDescription.Name = "labelWeatherDescription";
-            labelWeatherDescription.Size = new System.Drawing.Size(70, 15);
-            labelWeatherDescription.TabIndex = 9;
-            labelWeatherDescription.Text = "нет данных";
+            this.labelWeatherDescription.AutoSize = true;
+            this.labelWeatherDescription.Location = new System.Drawing.Point(106, 56);
+            this.labelWeatherDescription.Name = "labelWeatherDescription";
+            this.labelWeatherDescription.Size = new System.Drawing.Size(70, 15);
+            this.labelWeatherDescription.TabIndex = 9;
+            this.labelWeatherDescription.Text = "нет данных";
             // 
             // Window
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(496, 324);
-            Controls.Add(groupBoxCurrentWeather);
-            Controls.Add(groupBox1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            Name = "Window";
-            Text = "Прогноз погоды";
-            FormClosing += Window_FormClosing;
-            groupBox1.ResumeLayout(false);
-            groupBoxCurrentWeather.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxWeatherConditionIcon).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(496, 324);
+            this.Controls.Add(this.groupBoxCurrentWeather);
+            this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "Window";
+            this.Text = "Прогноз погоды";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Window_FormClosing);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBoxCurrentWeather.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWeatherConditionIcon)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

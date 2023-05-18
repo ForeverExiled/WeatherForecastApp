@@ -30,7 +30,9 @@ namespace WeatherForecastApp
 
         private void buttonGetCurrentWeather_Click(object sender, System.EventArgs e)
         {
+            var comboboxOldText = comboBoxLocationList.Text;
             var data = Controller.RequestApiCurrentGetCall(comboBoxLocationList.Text);
+            comboBoxLocationList.Text = comboboxOldText;
             if (data != null) FillCurrentWeather(data);
             else MessageBox.Show("Ошибка при попытке получения данных.", "Данные отсутствуют", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -38,6 +40,8 @@ namespace WeatherForecastApp
         private void FillCurrentWeather(CurrentWeatherResponseWrapper data)
         {
             groupBoxCurrentWeather.Text = comboBoxLocationList.Text;
+            if (data.CurrentWeatherResponse.Weather[0].Icon.Contains("d")) pictureBoxWeatherConditionIcon.BackColor = Color.LightSkyBlue;
+            else pictureBoxWeatherConditionIcon.BackColor = Color.SlateBlue;
             pictureBoxWeatherConditionIcon.Image = new Bitmap(Controller.RequestIconPath(data.CurrentWeatherResponse.Weather[0].Icon));
             var dt = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(data.CurrentWeatherResponse.Timestamp + data.City.Timezone);
             labelCurrentWeatherDateTime.Text = dt.ToString("t", new CultureInfo("ru-RU")) + "\n"

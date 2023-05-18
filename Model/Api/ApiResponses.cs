@@ -14,7 +14,7 @@ namespace WeatherForecastApp.Api
         [JsonProperty("wind")]
         public WindData Wind;
         [JsonProperty("dt")]
-        public ulong Timestamp;
+        public long Timestamp;
     }
 
     public class CurrentWeatherResponseWrapper
