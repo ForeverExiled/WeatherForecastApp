@@ -14,6 +14,7 @@ namespace WeatherForecastApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (Properties.Settings.Default.ComboboxCityIndex == -1) Properties.Settings.Default.ComboboxCityIndex = 0;
             Application.Run(new MainWindow());
         }
     }

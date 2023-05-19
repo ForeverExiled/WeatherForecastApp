@@ -22,7 +22,7 @@ namespace WeatherForecastApp.View
             var comboboxOldText = comboBoxLocationList.Text;
             var cityList = Controller.RequestCityList();
             comboBoxLocationList.DataSource = cityList;
-            comboBoxLocationList.Text = comboboxOldText;
+            if (comboboxOldText != "") comboBoxLocationList.Text = comboboxOldText;
         }
 
         public string GetSelectedCityName()

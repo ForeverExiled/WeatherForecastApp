@@ -10,7 +10,7 @@ namespace WeatherForecastApp
     public partial class MainWindow : Form
     {
         private Controller.Controller Controller = new Controller.Controller();
-        SettingsWindow SettingsWindow = new SettingsWindow();
+        private SettingsWindow SettingsWindow = new SettingsWindow();
 
         public MainWindow()
         {
@@ -20,7 +20,7 @@ namespace WeatherForecastApp
         }
 
 
-        private void buttonGetCurrentWeather_Click(object sender, System.EventArgs e)
+        private void buttonGetCurrentWeather_Click(object sender, EventArgs e)
         {
             var data = Controller.RequestApiCurrentGetCall(SettingsWindow.GetSelectedCityName());
             if (data != null) FillCurrentWeather(data);
@@ -29,7 +29,7 @@ namespace WeatherForecastApp
 
         private void FillCurrentWeather(CurrentWeatherResponseWrapper data)
         {
-            groupBoxCurrentWeather.Text = SettingsWindow.GetSelectedCityName();
+            groupBoxCity.Text = SettingsWindow.GetSelectedCityName();
             if (data.CurrentWeatherResponse.Weather[0].Icon.Contains("d")) pictureBoxWeatherConditionIcon.BackColor = Color.LightSkyBlue;
             else pictureBoxWeatherConditionIcon.BackColor = Color.SlateBlue;
             pictureBoxWeatherConditionIcon.Image = new Bitmap(Controller.RequestIconPath(data.CurrentWeatherResponse.Weather[0].Icon));
@@ -48,7 +48,6 @@ namespace WeatherForecastApp
 
         private void buttonGetForecast_Click(object sender, EventArgs e)
         {
-            SettingsWindow.ShowDialog();
             if (SettingsWindow.IsSelectedCityInTheList()) Controller.RequestOldForecastDataDeletion(SettingsWindow.GetSelectedCityId());
             var data = Controller.RequestApiForecastGetCall(SettingsWindow.GetSelectedCityName());
         }
