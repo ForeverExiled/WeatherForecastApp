@@ -32,6 +32,7 @@ namespace WeatherForecastApp
             this.buttonGetCurrentWeather = new System.Windows.Forms.Button();
             this.buttonGetForecast = new System.Windows.Forms.Button();
             this.groupBoxCurrentWeather = new System.Windows.Forms.GroupBox();
+            this.buttonNextTimestamp = new System.Windows.Forms.Button();
             this.buttonPreviousTimestamp = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,32 +53,31 @@ namespace WeatherForecastApp
             this.toolStripMenuItem_Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxCity = new System.Windows.Forms.GroupBox();
             this.groupBoxForecast = new System.Windows.Forms.GroupBox();
-            this.buttonNextTimestamp = new System.Windows.Forms.Button();
-            this.groupBoxDay1 = new System.Windows.Forms.GroupBox();
-            this.groupBoxDay2 = new System.Windows.Forms.GroupBox();
-            this.labelDay1 = new System.Windows.Forms.Label();
-            this.pictureBoxDay1 = new System.Windows.Forms.PictureBox();
-            this.labelDay2 = new System.Windows.Forms.Label();
-            this.groupBoxDay3 = new System.Windows.Forms.GroupBox();
-            this.labelDay3 = new System.Windows.Forms.Label();
-            this.groupBoxDay4 = new System.Windows.Forms.GroupBox();
-            this.labelDay4 = new System.Windows.Forms.Label();
-            this.groupBoxDay5 = new System.Windows.Forms.GroupBox();
-            this.labelDay5 = new System.Windows.Forms.Label();
-            this.pictureBoxNight1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNight2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDay2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNight3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDay3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNight4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDay4 = new System.Windows.Forms.PictureBox();
+            this.buttonDay5 = new System.Windows.Forms.Button();
+            this.buttonDay4 = new System.Windows.Forms.Button();
+            this.buttonDay3 = new System.Windows.Forms.Button();
+            this.buttonDay2 = new System.Windows.Forms.Button();
+            this.buttonDay1 = new System.Windows.Forms.Button();
             this.pictureBoxNight5 = new System.Windows.Forms.PictureBox();
             this.pictureBoxDay5 = new System.Windows.Forms.PictureBox();
-            this.buttonDay1 = new System.Windows.Forms.Button();
-            this.buttonDay2 = new System.Windows.Forms.Button();
-            this.buttonDay3 = new System.Windows.Forms.Button();
-            this.buttonDay4 = new System.Windows.Forms.Button();
-            this.buttonDay5 = new System.Windows.Forms.Button();
+            this.pictureBoxNight4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDay4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNight3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDay3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNight2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDay2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNight1 = new System.Windows.Forms.PictureBox();
+            this.groupBoxDay5 = new System.Windows.Forms.GroupBox();
+            this.labelDay5 = new System.Windows.Forms.Label();
+            this.groupBoxDay4 = new System.Windows.Forms.GroupBox();
+            this.labelDay4 = new System.Windows.Forms.Label();
+            this.groupBoxDay3 = new System.Windows.Forms.GroupBox();
+            this.labelDay3 = new System.Windows.Forms.Label();
+            this.groupBoxDay2 = new System.Windows.Forms.GroupBox();
+            this.labelDay2 = new System.Windows.Forms.Label();
+            this.pictureBoxDay1 = new System.Windows.Forms.PictureBox();
+            this.groupBoxDay1 = new System.Windows.Forms.GroupBox();
+            this.labelDay1 = new System.Windows.Forms.Label();
             this.groupBoxCurrentWeather.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,21 +85,21 @@ namespace WeatherForecastApp
             this.menuStrip1.SuspendLayout();
             this.groupBoxCity.SuspendLayout();
             this.groupBoxForecast.SuspendLayout();
-            this.groupBoxDay1.SuspendLayout();
-            this.groupBoxDay2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay1)).BeginInit();
-            this.groupBoxDay3.SuspendLayout();
-            this.groupBoxDay4.SuspendLayout();
-            this.groupBoxDay5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight1)).BeginInit();
+            this.groupBoxDay5.SuspendLayout();
+            this.groupBoxDay4.SuspendLayout();
+            this.groupBoxDay3.SuspendLayout();
+            this.groupBoxDay2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay1)).BeginInit();
+            this.groupBoxDay1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonGetCurrentWeather
@@ -134,10 +134,21 @@ namespace WeatherForecastApp
             this.groupBoxCurrentWeather.ForeColor = System.Drawing.Color.Black;
             this.groupBoxCurrentWeather.Location = new System.Drawing.Point(6, 22);
             this.groupBoxCurrentWeather.Name = "groupBoxCurrentWeather";
-            this.groupBoxCurrentWeather.Size = new System.Drawing.Size(202, 350);
+            this.groupBoxCurrentWeather.Size = new System.Drawing.Size(212, 350);
             this.groupBoxCurrentWeather.TabIndex = 14;
             this.groupBoxCurrentWeather.TabStop = false;
             this.groupBoxCurrentWeather.Text = "Погода сейчас";
+            // 
+            // buttonNextTimestamp
+            // 
+            this.buttonNextTimestamp.Enabled = false;
+            this.buttonNextTimestamp.Location = new System.Drawing.Point(149, 288);
+            this.buttonNextTimestamp.Name = "buttonNextTimestamp";
+            this.buttonNextTimestamp.Size = new System.Drawing.Size(57, 40);
+            this.buttonNextTimestamp.TabIndex = 17;
+            this.buttonNextTimestamp.Text = "нет\r\nданных";
+            this.buttonNextTimestamp.UseVisualStyleBackColor = true;
+            this.buttonNextTimestamp.Click += new System.EventHandler(this.buttonNextTimestamp_Click);
             // 
             // buttonPreviousTimestamp
             // 
@@ -148,6 +159,7 @@ namespace WeatherForecastApp
             this.buttonPreviousTimestamp.TabIndex = 16;
             this.buttonPreviousTimestamp.Text = "нет\r\nданных";
             this.buttonPreviousTimestamp.UseVisualStyleBackColor = true;
+            this.buttonPreviousTimestamp.Click += new System.EventHandler(this.buttonPreviousTimestamp_Click);
             // 
             // groupBox3
             // 
@@ -163,7 +175,7 @@ namespace WeatherForecastApp
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(6, 136);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(190, 144);
+            this.groupBox3.Size = new System.Drawing.Size(200, 144);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
@@ -269,7 +281,7 @@ namespace WeatherForecastApp
             this.groupBox2.Controls.Add(this.labelWeatherDescription);
             this.groupBox2.Location = new System.Drawing.Point(6, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(190, 111);
+            this.groupBox2.Size = new System.Drawing.Size(200, 111);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
@@ -308,7 +320,7 @@ namespace WeatherForecastApp
             this.toolStripMenuItem_Settings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(639, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(650, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -326,7 +338,7 @@ namespace WeatherForecastApp
             this.groupBoxCity.Controls.Add(this.groupBoxCurrentWeather);
             this.groupBoxCity.Location = new System.Drawing.Point(12, 58);
             this.groupBoxCity.Name = "groupBoxCity";
-            this.groupBoxCity.Size = new System.Drawing.Size(616, 394);
+            this.groupBoxCity.Size = new System.Drawing.Size(626, 394);
             this.groupBoxCity.TabIndex = 16;
             this.groupBoxCity.TabStop = false;
             this.groupBoxCity.Text = "нет данных";
@@ -354,110 +366,152 @@ namespace WeatherForecastApp
             this.groupBoxForecast.Controls.Add(this.groupBoxDay2);
             this.groupBoxForecast.Controls.Add(this.pictureBoxDay1);
             this.groupBoxForecast.Controls.Add(this.groupBoxDay1);
-            this.groupBoxForecast.Location = new System.Drawing.Point(214, 22);
+            this.groupBoxForecast.Location = new System.Drawing.Point(224, 22);
             this.groupBoxForecast.Name = "groupBoxForecast";
             this.groupBoxForecast.Size = new System.Drawing.Size(396, 350);
             this.groupBoxForecast.TabIndex = 15;
             this.groupBoxForecast.TabStop = false;
             this.groupBoxForecast.Text = "Прогноз на 5 дней";
             // 
-            // buttonNextTimestamp
+            // buttonDay5
             // 
-            this.buttonNextTimestamp.Enabled = false;
-            this.buttonNextTimestamp.Location = new System.Drawing.Point(139, 288);
-            this.buttonNextTimestamp.Name = "buttonNextTimestamp";
-            this.buttonNextTimestamp.Size = new System.Drawing.Size(57, 40);
-            this.buttonNextTimestamp.TabIndex = 17;
-            this.buttonNextTimestamp.Text = "нет\r\nданных";
-            this.buttonNextTimestamp.UseVisualStyleBackColor = true;
+            this.buttonDay5.Location = new System.Drawing.Point(320, 279);
+            this.buttonDay5.Name = "buttonDay5";
+            this.buttonDay5.Size = new System.Drawing.Size(69, 47);
+            this.buttonDay5.TabIndex = 34;
+            this.buttonDay5.Text = "Раскрыть";
+            this.buttonDay5.UseVisualStyleBackColor = true;
+            this.buttonDay5.Click += new System.EventHandler(this.buttonDay5_Click);
             // 
-            // groupBoxDay1
+            // buttonDay4
             // 
-            this.groupBoxDay1.AutoSize = true;
-            this.groupBoxDay1.Controls.Add(this.labelDay1);
-            this.groupBoxDay1.Location = new System.Drawing.Point(6, 19);
-            this.groupBoxDay1.Name = "groupBoxDay1";
-            this.groupBoxDay1.Size = new System.Drawing.Size(200, 57);
-            this.groupBoxDay1.TabIndex = 0;
-            this.groupBoxDay1.TabStop = false;
-            this.groupBoxDay1.Text = "Сегодня";
+            this.buttonDay4.Location = new System.Drawing.Point(320, 216);
+            this.buttonDay4.Name = "buttonDay4";
+            this.buttonDay4.Size = new System.Drawing.Size(69, 47);
+            this.buttonDay4.TabIndex = 33;
+            this.buttonDay4.Text = "Раскрыть";
+            this.buttonDay4.UseVisualStyleBackColor = true;
+            this.buttonDay4.Click += new System.EventHandler(this.buttonDay4_Click);
             // 
-            // groupBoxDay2
+            // buttonDay3
             // 
-            this.groupBoxDay2.AutoSize = true;
-            this.groupBoxDay2.Controls.Add(this.labelDay2);
-            this.groupBoxDay2.Location = new System.Drawing.Point(6, 82);
-            this.groupBoxDay2.Name = "groupBoxDay2";
-            this.groupBoxDay2.Size = new System.Drawing.Size(200, 57);
-            this.groupBoxDay2.TabIndex = 1;
-            this.groupBoxDay2.TabStop = false;
-            this.groupBoxDay2.Text = "Завтра";
+            this.buttonDay3.Location = new System.Drawing.Point(321, 154);
+            this.buttonDay3.Name = "buttonDay3";
+            this.buttonDay3.Size = new System.Drawing.Size(69, 47);
+            this.buttonDay3.TabIndex = 32;
+            this.buttonDay3.Text = "Раскрыть";
+            this.buttonDay3.UseVisualStyleBackColor = true;
+            this.buttonDay3.Click += new System.EventHandler(this.buttonDay3_Click);
             // 
-            // labelDay1
+            // buttonDay2
             // 
-            this.labelDay1.AutoSize = true;
-            this.labelDay1.Location = new System.Drawing.Point(7, 23);
-            this.labelDay1.Name = "labelDay1";
-            this.labelDay1.Size = new System.Drawing.Size(69, 15);
-            this.labelDay1.TabIndex = 0;
-            this.labelDay1.Text = "нет данных";
+            this.buttonDay2.Location = new System.Drawing.Point(321, 90);
+            this.buttonDay2.Name = "buttonDay2";
+            this.buttonDay2.Size = new System.Drawing.Size(69, 47);
+            this.buttonDay2.TabIndex = 31;
+            this.buttonDay2.Text = "Раскрыть";
+            this.buttonDay2.UseVisualStyleBackColor = true;
+            this.buttonDay2.Click += new System.EventHandler(this.buttonDay2_Click);
             // 
-            // pictureBoxDay1
+            // buttonDay1
             // 
-            this.pictureBoxDay1.Location = new System.Drawing.Point(212, 27);
-            this.pictureBoxDay1.Name = "pictureBoxDay1";
-            this.pictureBoxDay1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxDay1.TabIndex = 17;
-            this.pictureBoxDay1.TabStop = false;
+            this.buttonDay1.Location = new System.Drawing.Point(321, 28);
+            this.buttonDay1.Name = "buttonDay1";
+            this.buttonDay1.Size = new System.Drawing.Size(69, 47);
+            this.buttonDay1.TabIndex = 30;
+            this.buttonDay1.Text = "Раскрыть";
+            this.buttonDay1.UseVisualStyleBackColor = true;
+            this.buttonDay1.Click += new System.EventHandler(this.buttonDay1_Click);
             // 
-            // labelDay2
+            // pictureBoxNight5
             // 
-            this.labelDay2.AutoSize = true;
-            this.labelDay2.Location = new System.Drawing.Point(7, 23);
-            this.labelDay2.Name = "labelDay2";
-            this.labelDay2.Size = new System.Drawing.Size(69, 15);
-            this.labelDay2.TabIndex = 1;
-            this.labelDay2.Text = "нет данных";
+            this.pictureBoxNight5.BackColor = System.Drawing.Color.SlateBlue;
+            this.pictureBoxNight5.Location = new System.Drawing.Point(266, 279);
+            this.pictureBoxNight5.Name = "pictureBoxNight5";
+            this.pictureBoxNight5.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxNight5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNight5.TabIndex = 29;
+            this.pictureBoxNight5.TabStop = false;
             // 
-            // groupBoxDay3
+            // pictureBoxDay5
             // 
-            this.groupBoxDay3.AutoSize = true;
-            this.groupBoxDay3.Controls.Add(this.labelDay3);
-            this.groupBoxDay3.Location = new System.Drawing.Point(6, 145);
-            this.groupBoxDay3.Name = "groupBoxDay3";
-            this.groupBoxDay3.Size = new System.Drawing.Size(200, 57);
-            this.groupBoxDay3.TabIndex = 18;
-            this.groupBoxDay3.TabStop = false;
-            this.groupBoxDay3.Text = "нет данных";
+            this.pictureBoxDay5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pictureBoxDay5.Location = new System.Drawing.Point(212, 279);
+            this.pictureBoxDay5.Name = "pictureBoxDay5";
+            this.pictureBoxDay5.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxDay5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDay5.TabIndex = 28;
+            this.pictureBoxDay5.TabStop = false;
             // 
-            // labelDay3
+            // pictureBoxNight4
             // 
-            this.labelDay3.AutoSize = true;
-            this.labelDay3.Location = new System.Drawing.Point(7, 23);
-            this.labelDay3.Name = "labelDay3";
-            this.labelDay3.Size = new System.Drawing.Size(69, 15);
-            this.labelDay3.TabIndex = 1;
-            this.labelDay3.Text = "нет данных";
+            this.pictureBoxNight4.BackColor = System.Drawing.Color.SlateBlue;
+            this.pictureBoxNight4.Location = new System.Drawing.Point(266, 216);
+            this.pictureBoxNight4.Name = "pictureBoxNight4";
+            this.pictureBoxNight4.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxNight4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNight4.TabIndex = 27;
+            this.pictureBoxNight4.TabStop = false;
             // 
-            // groupBoxDay4
+            // pictureBoxDay4
             // 
-            this.groupBoxDay4.AutoSize = true;
-            this.groupBoxDay4.Controls.Add(this.labelDay4);
-            this.groupBoxDay4.Location = new System.Drawing.Point(6, 208);
-            this.groupBoxDay4.Name = "groupBoxDay4";
-            this.groupBoxDay4.Size = new System.Drawing.Size(200, 57);
-            this.groupBoxDay4.TabIndex = 19;
-            this.groupBoxDay4.TabStop = false;
-            this.groupBoxDay4.Text = "нет данных";
+            this.pictureBoxDay4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pictureBoxDay4.Location = new System.Drawing.Point(212, 216);
+            this.pictureBoxDay4.Name = "pictureBoxDay4";
+            this.pictureBoxDay4.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxDay4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDay4.TabIndex = 26;
+            this.pictureBoxDay4.TabStop = false;
             // 
-            // labelDay4
+            // pictureBoxNight3
             // 
-            this.labelDay4.AutoSize = true;
-            this.labelDay4.Location = new System.Drawing.Point(7, 23);
-            this.labelDay4.Name = "labelDay4";
-            this.labelDay4.Size = new System.Drawing.Size(69, 15);
-            this.labelDay4.TabIndex = 1;
-            this.labelDay4.Text = "нет данных";
+            this.pictureBoxNight3.BackColor = System.Drawing.Color.SlateBlue;
+            this.pictureBoxNight3.Location = new System.Drawing.Point(266, 153);
+            this.pictureBoxNight3.Name = "pictureBoxNight3";
+            this.pictureBoxNight3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxNight3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNight3.TabIndex = 25;
+            this.pictureBoxNight3.TabStop = false;
+            // 
+            // pictureBoxDay3
+            // 
+            this.pictureBoxDay3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pictureBoxDay3.Location = new System.Drawing.Point(212, 153);
+            this.pictureBoxDay3.Name = "pictureBoxDay3";
+            this.pictureBoxDay3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxDay3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDay3.TabIndex = 24;
+            this.pictureBoxDay3.TabStop = false;
+            // 
+            // pictureBoxNight2
+            // 
+            this.pictureBoxNight2.BackColor = System.Drawing.Color.SlateBlue;
+            this.pictureBoxNight2.Location = new System.Drawing.Point(266, 90);
+            this.pictureBoxNight2.Name = "pictureBoxNight2";
+            this.pictureBoxNight2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxNight2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNight2.TabIndex = 23;
+            this.pictureBoxNight2.TabStop = false;
+            // 
+            // pictureBoxDay2
+            // 
+            this.pictureBoxDay2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pictureBoxDay2.Location = new System.Drawing.Point(212, 90);
+            this.pictureBoxDay2.Name = "pictureBoxDay2";
+            this.pictureBoxDay2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxDay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDay2.TabIndex = 22;
+            this.pictureBoxDay2.TabStop = false;
+            // 
+            // pictureBoxNight1
+            // 
+            this.pictureBoxNight1.BackColor = System.Drawing.Color.SlateBlue;
+            this.pictureBoxNight1.Location = new System.Drawing.Point(266, 27);
+            this.pictureBoxNight1.Name = "pictureBoxNight1";
+            this.pictureBoxNight1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxNight1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNight1.TabIndex = 21;
+            this.pictureBoxNight1.TabStop = false;
             // 
             // groupBoxDay5
             // 
@@ -479,128 +533,101 @@ namespace WeatherForecastApp
             this.labelDay5.TabIndex = 1;
             this.labelDay5.Text = "нет данных";
             // 
-            // pictureBoxNight1
+            // groupBoxDay4
             // 
-            this.pictureBoxNight1.Location = new System.Drawing.Point(266, 27);
-            this.pictureBoxNight1.Name = "pictureBoxNight1";
-            this.pictureBoxNight1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxNight1.TabIndex = 21;
-            this.pictureBoxNight1.TabStop = false;
+            this.groupBoxDay4.AutoSize = true;
+            this.groupBoxDay4.Controls.Add(this.labelDay4);
+            this.groupBoxDay4.Location = new System.Drawing.Point(6, 208);
+            this.groupBoxDay4.Name = "groupBoxDay4";
+            this.groupBoxDay4.Size = new System.Drawing.Size(200, 57);
+            this.groupBoxDay4.TabIndex = 19;
+            this.groupBoxDay4.TabStop = false;
+            this.groupBoxDay4.Text = "нет данных";
             // 
-            // pictureBoxNight2
+            // labelDay4
             // 
-            this.pictureBoxNight2.Location = new System.Drawing.Point(266, 90);
-            this.pictureBoxNight2.Name = "pictureBoxNight2";
-            this.pictureBoxNight2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxNight2.TabIndex = 23;
-            this.pictureBoxNight2.TabStop = false;
+            this.labelDay4.AutoSize = true;
+            this.labelDay4.Location = new System.Drawing.Point(7, 23);
+            this.labelDay4.Name = "labelDay4";
+            this.labelDay4.Size = new System.Drawing.Size(69, 15);
+            this.labelDay4.TabIndex = 1;
+            this.labelDay4.Text = "нет данных";
             // 
-            // pictureBoxDay2
+            // groupBoxDay3
             // 
-            this.pictureBoxDay2.Location = new System.Drawing.Point(212, 90);
-            this.pictureBoxDay2.Name = "pictureBoxDay2";
-            this.pictureBoxDay2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxDay2.TabIndex = 22;
-            this.pictureBoxDay2.TabStop = false;
+            this.groupBoxDay3.AutoSize = true;
+            this.groupBoxDay3.Controls.Add(this.labelDay3);
+            this.groupBoxDay3.Location = new System.Drawing.Point(6, 145);
+            this.groupBoxDay3.Name = "groupBoxDay3";
+            this.groupBoxDay3.Size = new System.Drawing.Size(200, 57);
+            this.groupBoxDay3.TabIndex = 18;
+            this.groupBoxDay3.TabStop = false;
+            this.groupBoxDay3.Text = "нет данных";
             // 
-            // pictureBoxNight3
+            // labelDay3
             // 
-            this.pictureBoxNight3.Location = new System.Drawing.Point(266, 153);
-            this.pictureBoxNight3.Name = "pictureBoxNight3";
-            this.pictureBoxNight3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxNight3.TabIndex = 25;
-            this.pictureBoxNight3.TabStop = false;
+            this.labelDay3.AutoSize = true;
+            this.labelDay3.Location = new System.Drawing.Point(7, 23);
+            this.labelDay3.Name = "labelDay3";
+            this.labelDay3.Size = new System.Drawing.Size(69, 15);
+            this.labelDay3.TabIndex = 1;
+            this.labelDay3.Text = "нет данных";
             // 
-            // pictureBoxDay3
+            // groupBoxDay2
             // 
-            this.pictureBoxDay3.Location = new System.Drawing.Point(212, 153);
-            this.pictureBoxDay3.Name = "pictureBoxDay3";
-            this.pictureBoxDay3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxDay3.TabIndex = 24;
-            this.pictureBoxDay3.TabStop = false;
+            this.groupBoxDay2.AutoSize = true;
+            this.groupBoxDay2.Controls.Add(this.labelDay2);
+            this.groupBoxDay2.Location = new System.Drawing.Point(6, 82);
+            this.groupBoxDay2.Name = "groupBoxDay2";
+            this.groupBoxDay2.Size = new System.Drawing.Size(200, 57);
+            this.groupBoxDay2.TabIndex = 1;
+            this.groupBoxDay2.TabStop = false;
+            this.groupBoxDay2.Text = "Завтра";
             // 
-            // pictureBoxNight4
+            // labelDay2
             // 
-            this.pictureBoxNight4.Location = new System.Drawing.Point(266, 216);
-            this.pictureBoxNight4.Name = "pictureBoxNight4";
-            this.pictureBoxNight4.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxNight4.TabIndex = 27;
-            this.pictureBoxNight4.TabStop = false;
+            this.labelDay2.AutoSize = true;
+            this.labelDay2.Location = new System.Drawing.Point(7, 23);
+            this.labelDay2.Name = "labelDay2";
+            this.labelDay2.Size = new System.Drawing.Size(69, 15);
+            this.labelDay2.TabIndex = 1;
+            this.labelDay2.Text = "нет данных";
             // 
-            // pictureBoxDay4
+            // pictureBoxDay1
             // 
-            this.pictureBoxDay4.Location = new System.Drawing.Point(212, 216);
-            this.pictureBoxDay4.Name = "pictureBoxDay4";
-            this.pictureBoxDay4.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxDay4.TabIndex = 26;
-            this.pictureBoxDay4.TabStop = false;
+            this.pictureBoxDay1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pictureBoxDay1.Location = new System.Drawing.Point(212, 27);
+            this.pictureBoxDay1.Name = "pictureBoxDay1";
+            this.pictureBoxDay1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxDay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDay1.TabIndex = 17;
+            this.pictureBoxDay1.TabStop = false;
             // 
-            // pictureBoxNight5
+            // groupBoxDay1
             // 
-            this.pictureBoxNight5.Location = new System.Drawing.Point(266, 279);
-            this.pictureBoxNight5.Name = "pictureBoxNight5";
-            this.pictureBoxNight5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxNight5.TabIndex = 29;
-            this.pictureBoxNight5.TabStop = false;
+            this.groupBoxDay1.AutoSize = true;
+            this.groupBoxDay1.Controls.Add(this.labelDay1);
+            this.groupBoxDay1.Location = new System.Drawing.Point(6, 19);
+            this.groupBoxDay1.Name = "groupBoxDay1";
+            this.groupBoxDay1.Size = new System.Drawing.Size(200, 57);
+            this.groupBoxDay1.TabIndex = 0;
+            this.groupBoxDay1.TabStop = false;
+            this.groupBoxDay1.Text = "Сегодня";
             // 
-            // pictureBoxDay5
+            // labelDay1
             // 
-            this.pictureBoxDay5.Location = new System.Drawing.Point(212, 279);
-            this.pictureBoxDay5.Name = "pictureBoxDay5";
-            this.pictureBoxDay5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxDay5.TabIndex = 28;
-            this.pictureBoxDay5.TabStop = false;
-            // 
-            // buttonDay1
-            // 
-            this.buttonDay1.Location = new System.Drawing.Point(321, 28);
-            this.buttonDay1.Name = "buttonDay1";
-            this.buttonDay1.Size = new System.Drawing.Size(69, 47);
-            this.buttonDay1.TabIndex = 30;
-            this.buttonDay1.Text = "Раскрыть";
-            this.buttonDay1.UseVisualStyleBackColor = true;
-            // 
-            // buttonDay2
-            // 
-            this.buttonDay2.Location = new System.Drawing.Point(321, 90);
-            this.buttonDay2.Name = "buttonDay2";
-            this.buttonDay2.Size = new System.Drawing.Size(69, 47);
-            this.buttonDay2.TabIndex = 31;
-            this.buttonDay2.Text = "Раскрыть";
-            this.buttonDay2.UseVisualStyleBackColor = true;
-            // 
-            // buttonDay3
-            // 
-            this.buttonDay3.Location = new System.Drawing.Point(321, 154);
-            this.buttonDay3.Name = "buttonDay3";
-            this.buttonDay3.Size = new System.Drawing.Size(69, 47);
-            this.buttonDay3.TabIndex = 32;
-            this.buttonDay3.Text = "Раскрыть";
-            this.buttonDay3.UseVisualStyleBackColor = true;
-            // 
-            // buttonDay4
-            // 
-            this.buttonDay4.Location = new System.Drawing.Point(320, 216);
-            this.buttonDay4.Name = "buttonDay4";
-            this.buttonDay4.Size = new System.Drawing.Size(69, 47);
-            this.buttonDay4.TabIndex = 33;
-            this.buttonDay4.Text = "Раскрыть";
-            this.buttonDay4.UseVisualStyleBackColor = true;
-            // 
-            // buttonDay5
-            // 
-            this.buttonDay5.Location = new System.Drawing.Point(320, 279);
-            this.buttonDay5.Name = "buttonDay5";
-            this.buttonDay5.Size = new System.Drawing.Size(69, 47);
-            this.buttonDay5.TabIndex = 34;
-            this.buttonDay5.Text = "Раскрыть";
-            this.buttonDay5.UseVisualStyleBackColor = true;
+            this.labelDay1.AutoSize = true;
+            this.labelDay1.Location = new System.Drawing.Point(7, 23);
+            this.labelDay1.Name = "labelDay1";
+            this.labelDay1.Size = new System.Drawing.Size(69, 15);
+            this.labelDay1.TabIndex = 0;
+            this.labelDay1.Text = "нет данных";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 462);
+            this.ClientSize = new System.Drawing.Size(650, 462);
             this.Controls.Add(this.buttonGetCurrentWeather);
             this.Controls.Add(this.buttonGetForecast);
             this.Controls.Add(this.menuStrip1);
@@ -621,26 +648,26 @@ namespace WeatherForecastApp
             this.groupBoxCity.PerformLayout();
             this.groupBoxForecast.ResumeLayout(false);
             this.groupBoxForecast.PerformLayout();
-            this.groupBoxDay1.ResumeLayout(false);
-            this.groupBoxDay1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight1)).EndInit();
+            this.groupBoxDay5.ResumeLayout(false);
+            this.groupBoxDay5.PerformLayout();
+            this.groupBoxDay4.ResumeLayout(false);
+            this.groupBoxDay4.PerformLayout();
+            this.groupBoxDay3.ResumeLayout(false);
+            this.groupBoxDay3.PerformLayout();
             this.groupBoxDay2.ResumeLayout(false);
             this.groupBoxDay2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay1)).EndInit();
-            this.groupBoxDay3.ResumeLayout(false);
-            this.groupBoxDay3.PerformLayout();
-            this.groupBoxDay4.ResumeLayout(false);
-            this.groupBoxDay4.PerformLayout();
-            this.groupBoxDay5.ResumeLayout(false);
-            this.groupBoxDay5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNight5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDay5)).EndInit();
+            this.groupBoxDay1.ResumeLayout(false);
+            this.groupBoxDay1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

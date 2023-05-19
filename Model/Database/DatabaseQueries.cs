@@ -76,6 +76,7 @@ namespace WeatherForecastApp.Model.Database
         {
             List<Forecast> list = dbContext.Forecasts
                 .Where(forecast => forecast.FkCity == int.Parse(cityId))
+                .OrderBy(Forecast => Forecast.Timestamp)
                 .ToList();
             return list;
         }

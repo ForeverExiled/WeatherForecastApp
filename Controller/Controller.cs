@@ -24,7 +24,7 @@ namespace WeatherForecastApp.Controller
             return deserializedResponse;
         }
 
-        public void RequestForecastDataInsertion(WeatherForecastResponse data)
+        private void RequestForecastDataInsertion(WeatherForecastResponse data)
         {
             DatabaseQueries.InsertForecastData(data);
         }
@@ -55,6 +55,11 @@ namespace WeatherForecastApp.Controller
         public bool RequestForecastDataRelevanceCheck(string cityId)
         {
             return DatabaseQueries.IsForecastDataRelevant(cityId);
+        }
+
+        public List<Forecast> GetForecastList(string cityId)
+        {
+            return DatabaseQueries.GetForecastList(cityId);
         }
     }
 }

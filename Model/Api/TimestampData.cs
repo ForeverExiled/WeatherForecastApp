@@ -7,7 +7,7 @@ namespace WeatherForecastApp.Model.Api
     public class TimestampData
     {
         [JsonProperty("dt")]
-        public ulong Timestamp;
+        public long Timestamp;
         [JsonProperty("main")]
         public MainData Main;
         [JsonProperty("weather")]
