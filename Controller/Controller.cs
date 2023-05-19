@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WeatherForecastApp.Api;
 using WeatherForecastApp.Database;
 using WeatherForecastApp.Model;
@@ -57,9 +58,54 @@ namespace WeatherForecastApp.Controller
             return DatabaseQueries.IsForecastDataRelevant(cityId);
         }
 
-        public List<Forecast> GetForecastList(string cityId)
+        public WeatherForecastResponse RequestForecastData(string cityId)
         {
-            return DatabaseQueries.GetForecastList(cityId);
+            var forecastData = DatabaseQueries.GetForecastList(cityId);
+            var city = DatabaseQueries.GetCityById(cityId);
+            var forecastsList = new List<TimestampData>();
+            foreach (var forecast in forecastData)
+            {
+                var dt = (DateTime)forecast.Timestamp;
+                var tsData = new TimestampData
+                {
+                    Main = new MainData
+                    {
+                        FeelsLike = (double)forecast.FeelsLike,
+                        Temperature = (double)forecast.Temperature,
+                        Humidity = (int)forecast.Humidity,
+                        Pressure = (int)forecast.Pressure
+                    },
+                    Timestamp = ((DateTimeOffset)dt.AddSeconds((long)city.Timezone)).ToUnixTimeSeconds(),
+                    Weather = new List<WeatherData>(),
+                    Wind = new WindData
+                    {
+                        WindDegree = (int)forecast.WindDegree,
+                        WindSpeed = (double)forecast.WindSpeed
+                    }
+                };
+                tsData.Weather.Add(new WeatherData
+                {
+                    Description = forecast.Weather_Description,
+                    Icon = forecast.Weather_Icon
+                });
+                forecastsList.Add(tsData);
+            }
+            var result = new WeatherForecastResponse
+            {
+                City = new CityData
+                {
+                    Timezone = (long)city.Timezone,
+                    Coordinates = new CoordinatesData
+                    {
+                        Latitide = (double)city.Latitude,
+                        Longitude = (double)city.Longitude
+                    },
+                    Id = city.Id,
+                    Name = city.Name
+                },
+                Forecasts = forecastsList
+            };
+            return result;
         }
     }
 }

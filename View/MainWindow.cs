@@ -22,6 +22,8 @@ namespace WeatherForecastApp
             InitializeComponent();
             buttonGetCurrentWeather_Click(this, EventArgs.Empty);
             if (!Controller.RequestForecastDataRelevanceCheck(SettingsWindow.GetSelectedCityId())) buttonGetForecast_Click(this, EventArgs.Empty);
+            CachedWeatherData = Controller.RequestForecastData(SettingsWindow.GetSelectedCityId());
+            FillForecastData();
         }
 
 

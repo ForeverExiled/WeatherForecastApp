@@ -43,6 +43,11 @@ namespace WeatherForecastApp.Model.Database
             return city;
         }
 
+        public static City GetCityById(string cityId)
+        {
+            return (City)dbContext.Find(typeof(City), int.Parse(cityId));
+        }
+
         private static City InsertCityData(CityData cityData)
         {
             var city = new City()
