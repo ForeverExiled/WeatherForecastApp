@@ -20,6 +20,8 @@ namespace WeatherForecastApp
         public MainWindow()
         {
             InitializeComponent();
+            SettingsWindow.CityChanged += buttonGetCurrentWeather_Click;
+            SettingsWindow.CityChanged += buttonGetForecast_Click;
             buttonGetCurrentWeather_Click(this, EventArgs.Empty);
             if (!Controller.RequestForecastDataRelevanceCheck(SettingsWindow.GetSelectedCityId())) buttonGetForecast_Click(this, EventArgs.Empty);
             CachedWeatherData = Controller.RequestForecastData(SettingsWindow.GetSelectedCityId());

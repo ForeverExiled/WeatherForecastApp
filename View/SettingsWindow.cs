@@ -6,6 +6,7 @@ namespace WeatherForecastApp.View
     public partial class SettingsWindow : Form
     {
         private Controller.Controller Controller = new Controller.Controller();
+        public event EventHandler CityChanged;
 
         public SettingsWindow()
         {
@@ -44,6 +45,7 @@ namespace WeatherForecastApp.View
         {
             Properties.Settings.Default.ComboboxCityIndex = comboBoxLocationList.SelectedIndex;
             Properties.Settings.Default.Save();
+            CityChanged?.Invoke(this, EventArgs.Empty);
             Close();
         }
     }
