@@ -20,14 +20,16 @@ namespace WeatherForecastApp
         public MainWindow()
         {
             InitializeComponent();
-            SettingsWindow.CityChanged += buttonGetCurrentWeather_Click;
-            SettingsWindow.CityChanged += buttonGetForecast_Click;
+            groupBoxCity.Text = SettingsWindow.GetSelectedCityName();
+            SettingsWindow.CityChanged += UpdateDataForSelectedCity;
             buttonGetCurrentWeather_Click(this, EventArgs.Empty);
             if (!Controller.RequestForecastDataRelevanceCheck(SettingsWindow.GetSelectedCityId())) buttonGetForecast_Click(this, EventArgs.Empty);
-            CachedWeatherData = Controller.RequestForecastData(SettingsWindow.GetSelectedCityId());
-            FillForecastData();
+            else
+            {
+                CachedWeatherData = Controller.RequestForecastData(SettingsWindow.GetSelectedCityId());
+                FillForecastData();
+            }
         }
-
 
         private void buttonGetCurrentWeather_Click(object sender, EventArgs e)
         {
@@ -42,7 +44,6 @@ namespace WeatherForecastApp
 
         private void FillCurrentWeather(CurrentWeatherResponseWrapper data)
         {
-            groupBoxCity.Text = SettingsWindow.GetSelectedCityName();
             if (data.CurrentWeatherResponse.Weather[0].Icon.Contains("d")) pictureBoxWeatherConditionIcon.BackColor = Color.LightSkyBlue;
             else pictureBoxWeatherConditionIcon.BackColor = Color.SlateBlue;
             pictureBoxWeatherConditionIcon.Image = new Bitmap(Controller.RequestIconPath(data.CurrentWeatherResponse.Weather[0].Icon));
@@ -69,7 +70,6 @@ namespace WeatherForecastApp
 
         private void FillForecastData()
         {
-            groupBoxCity.Text = SettingsWindow.GetSelectedCityName();
             FillForecastTemperatureData();
             FillWeatherConditionIcons();
             FIllDateData();
@@ -162,6 +162,7 @@ namespace WeatherForecastApp
         private void toolStripMenuItem_Settings_Click(object sender, EventArgs e)
         {
             SettingsWindow.ShowDialog();
+            groupBoxCity.Text = SettingsWindow.GetSelectedCityName();
         }
 
         private void FillCurrentWithForecastDay(int index, GroupBox box)
@@ -265,6 +266,17 @@ namespace WeatherForecastApp
         private void buttonNextTimestamp_Click(object sender, EventArgs e)
         {
             FillCurrentWithForecastDay(++currentIndex, currentDay);
+        }
+
+        private void UpdateDataForSelectedCity(object sender, EventArgs e)
+        {
+            buttonGetCurrentWeather_Click(sender, e);
+            if (!Controller.RequestForecastDataRelevanceCheck(SettingsWindow.GetSelectedCityId())) buttonGetForecast_Click(this, EventArgs.Empty);
+            else
+            {
+                CachedWeatherData = Controller.RequestForecastData(SettingsWindow.GetSelectedCityId());
+                FillForecastData();
+            }
         }
     }
 }
